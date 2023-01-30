@@ -2,7 +2,7 @@
 var welcome = document.getElementById("h1");
 
 // Set the initial position of the header to be off-screen to the left
-welcome.style.left = "-100%";
+welcome.style.left = "-10%";
 
 // Use the setTimeout function to animate the header after 2 seconds
 setTimeout(function() {
