@@ -1,3 +1,4 @@
+window.onload = function() {
 // Get the welcome header element
 var welcome = document.getElementById("welcome-header");
 
@@ -21,3 +22,4 @@ setTimeout(function() {
     welcome.style.left = (left + 10) + "%";
   }, 20);
 }, 2000);
+};
