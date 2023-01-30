@@ -10,11 +10,6 @@ body {
     text-align: center;
   }
 
-  h1 {
-    position: absolute;
-    left: -100%;
-  }
-  
   nav {
     background-color: #333;
     color: #fff;
