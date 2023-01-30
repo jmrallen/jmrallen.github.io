@@ -1,6 +1,6 @@
 window.onload = function() {
 // Get the welcome header element
-var welcome = document.getElementById("welcome-header");
+var welcome = document.getElementById("header");
 
 // Set the initial position of the header to be off-screen to the left
 welcome.style.left = "-100%";
