@@ -1,7 +1,8 @@
 .project {
     border: 1px solid black;
     padding: 10px;
-    margin: 10px;
+    margin: 0 auto 20px;
+    width: 500px;
   }
   
   .project h2 {
@@ -10,7 +11,7 @@
   
   .project p {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
   }
   
   .project a {
@@ -22,7 +23,7 @@
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    width: 40px;
+    width: 80px;
     margin: 0 auto;
   }
   
