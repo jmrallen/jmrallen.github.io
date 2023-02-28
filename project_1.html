@@ -18,10 +18,10 @@
 
     // Lets put all our map options in a single object
     const options = {
-    lat: 0,
-    lng: 0,
-    zoom: 4,
-    style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+    lat: 49.2606,
+    lng: -123.2460,
+    zoom: 2.55,
+    style: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
     }
 
     // p5.js setup
@@ -39,6 +39,8 @@
     // Only redraw the point when the map changes and not every frame.
     myMap.onChange(drawPoint);
     }
+    
+
 
     // p5.js draw
     function draw(){

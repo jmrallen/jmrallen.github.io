@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+    <name><![CDATA[List of impact craters in North America]]></name>
+    <open>1</open>
+    <Folder>
+        <name><![CDATA[Canada]]></name>
+        <open>1</open>
+        <Placemark>
+            <name><![CDATA[Brent]]></name>
+            <Point>
+                <coordinates>-78.4833333333333,46.0833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Carswell]]></name>
+            <Point>
+                <coordinates>-109.5,58.45,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Charlevoix]]></name>
+            <Point>
+                <coordinates>-70.3,47.5333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Couture]]></name>
+            <Point>
+                <coordinates>-75.3333333333333,60.1333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Deep Bay]]></name>
+            <Point>
+                <coordinates>-102.983333333333,56.4,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Eagle Butte]]></name>
+            <Point>
+                <coordinates>-110.5,49.7,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Elbow]]></name>
+            <Point>
+                <coordinates>-106.716666666667,50.9833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Gow]]></name>
+            <Point>
+                <coordinates>-104.483333333333,56.45,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Haughton]]></name>
+            <Point>
+                <coordinates>-89.6666666666667,75.3833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Holleford]]></name>
+            <Point>
+                <coordinates>-76.6333333333333,44.4666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Île Rouleau]]></name>
+            <Point>
+                <coordinates>-73.8833333333333,50.6833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[La Moinerie]]></name>
+            <Point>
+                <coordinates>-66.6166666666667,57.4333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Lac à l'Eau Claire Est]]></name>
+            <Point>
+                <coordinates>-74.1,56.0666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Lac à l'Eau Claire Ouest]]></name>
+            <Point>
+                <coordinates>-74.5,56.2166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Manicouagan]]></name>
+            <Point>
+                <coordinates>-68.7,51.3833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Maple Creek]]></name>
+            <Point>
+                <coordinates>-109.1,49.8,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Mistastin]]></name>
+            <Point>
+                <coordinates>-63.3,55.8833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Montagnais]]></name>
+            <Point>
+                <coordinates>-64.2166666666667,42.8833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Nicholson]]></name>
+            <Point>
+                <coordinates>-102.683333333333,62.6666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Pilot]]></name>
+            <Point>
+                <coordinates>-111,60.2833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Pingualuit]]></name>
+            <Point>
+                <coordinates>-73.6666666666667,61.2833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Presqu'île]]></name>
+            <Point>
+                <coordinates>-74.8,49.7166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[#23]]></name>
+            <Point>
+                <coordinates>-113.933333333333,72.4666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Canada">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Saint Martin]]></name>
+            <Point>
+                <coordinates>-98.5333333333333,51.7833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Slate Islands]]></name>
+            <Point>
+                <coordinates>-87,48.6666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Steen River]]></name>
+            <Point>
+                <coordinates>-117.633333333333,59.5,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Sudbury]]></name>
+            <Point>
+                <coordinates>-81.1833333333333,46.6,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Viewfield]]></name>
+            <Point>
+                <coordinates>-103.066666666667,49.5833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Wanapitei]]></name>
+            <Point>
+                <coordinates>-80.75,46.75,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[West Hawk]]></name>
+            <Point>
+                <coordinates>-95.1833333333333,49.7666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Whitecourt]]></name>
+            <Point>
+                <coordinates>-115.6,54,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-U_of_S_Press_Release_1-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+    </Folder>
+    <Folder>
+        <name><![CDATA[Mexico]]></name>
+        <open>1</open>
+        <Placemark>
+            <name><![CDATA[Chicxulub]]></name>
+            <Point>
+                <coordinates>-89.5,21.3333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Mexico">List of impact craters in North America</a>]]></description>
+        </Placemark>
+    </Folder>
+    <Folder>
+        <name><![CDATA[United States]]></name>
+        <open>1</open>
+        <Placemark>
+            <name><![CDATA[Ames]]></name>
+            <Point>
+                <coordinates>-98.2,36.25,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Avak]]></name>
+            <Point>
+                <coordinates>-156.5,71.25,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Barringer]]></name>
+            <Point>
+                <coordinates>-111.016666666667,35.0333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Beaverhead]]></name>
+            <Point>
+                <coordinates>-114,44.25,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Calvin]]></name>
+            <Point>
+                <coordinates>-85.95,41.8333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Chesapeake Bay]]></name>
+            <Point>
+                <coordinates>-76.0166666666667,37.2833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Cloud Creek]]></name>
+            <Point>
+                <coordinates>-106.75,43.1166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Crooked Creek]]></name>
+            <Point>
+                <coordinates>-91.3833333333333,37.8333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Decaturville]]></name>
+            <Point>
+                <coordinates>-92.7166666666667,37.9,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Des Plaines]]></name>
+            <Point>
+                <coordinates>-87.8666666666667,42.05,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Flynn Creek]]></name>
+            <Point>
+                <coordinates>-85.6666666666667,36.2833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Glasford]]></name>
+            <Point>
+                <coordinates>-89.7833333333333,40.6,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Glover Bluff]]></name>
+            <Point>
+                <coordinates>-89.5333333333333,43.9666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Haviland]]></name>
+            <Point>
+                <coordinates>-99.1666666666667,37.5833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Kentland]]></name>
+            <Point>
+                <coordinates>-87.4,40.75,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Manson]]></name>
+            <Point>
+                <coordinates>-94.55,42.5833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Marquez]]></name>
+            <Point>
+                <coordinates>-96.3,31.2833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Middlesboro]]></name>
+            <Point>
+                <coordinates>-83.7333333333333,36.6166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Newporte]]></name>
+            <Point>
+                <coordinates>-101.966666666667,48.9666666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Odessa]]></name>
+            <Point>
+                <coordinates>-102.483333333333,31.75,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Red Wing]]></name>
+            <Point>
+                <coordinates>-103.55,47.6,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Rock Elm]]></name>
+            <Point>
+                <coordinates>-92.2333333333333,44.7166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Santa Fe]]></name>
+            <Point>
+                <coordinates>-105.933333333333,35.75,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Serpent Mound]]></name>
+            <Point>
+                <coordinates>-83.4,39.0333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Sierra Madera]]></name>
+            <Point>
+                <coordinates>-102.916666666667,30.6,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Upheaval Dome]]></name>
+            <Point>
+                <coordinates>-109.933333333333,38.4333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Wells Creek]]></name>
+            <Point>
+                <coordinates>-87.6666666666667,36.3833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Wetumpka]]></name>
+            <Point>
+                <coordinates>-86.1666666666667,32.5166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#United_States">List of impact craters in North America</a>]]></description>
+        </Placemark>
+    </Folder>
+    <Folder>
+        <name><![CDATA[Unconfirmed impact craters]]></name>
+        <open>1</open>
+        <Placemark>
+            <name><![CDATA[Bow City]]></name>
+            <Point>
+                <coordinates>-112.266666666667,50.4166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Unconfirmed_impact_craters">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Corossol]]></name>
+            <Point>
+                <coordinates>-66.3833333333333,50.05,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Unconfirmed_impact_craters">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[#63]]></name>
+            <Point>
+                <coordinates>-91.7722333333333,43.3138138888889,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#Unconfirmed_impact_craters">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Gatun structure]]></name>
+            <Point>
+                <coordinates>-79.7833333333333,9.1,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-5">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Pantasma]]></name>
+            <Point>
+                <coordinates>-85.95,13.37,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-0">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Jeptha Knob]]></name>
+            <Point>
+                <coordinates>-85.1166666666667,38.1833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-1">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Panther Mountain]]></name>
+            <Point>
+                <coordinates>-74.4,42.05,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-2">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Snows Island]]></name>
+            <Point>
+                <coordinates>-79.3666666666667,33.8166666666667,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-3">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Toms Canyon]]></name>
+            <Point>
+                <coordinates>-72.85,39.1333333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-4">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Victoria Island structure]]></name>
+            <Point>
+                <coordinates>-121.534672,37.889925,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-5">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Weaubleau-Osceola]]></name>
+            <Point>
+                <coordinates>-93.6333333333333,37.9833333333333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-6">List of impact craters in North America</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Brushy Creek Feature]]></name>
+            <Point>
+                <coordinates>-90.735,30.768,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_impact_craters_in_North_America#cite_ref-rajmon_id_6-7">List of impact craters in North America</a>]]></description>
+        </Placemark>
+    </Folder>
+</Document>
+</kml>

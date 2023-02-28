@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Exercise</title>
+    <meta charset="utf-8" />
+
+    <!-- Leaflet styles and code. Place in the <head></head> element. -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+    <!-- jQuery is a library that simplifies many things in JavaScript. 
+	   We'll use it to retrieve data from the web. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="./p5.min.js"></script>
+    <!-- this should be unnecessary in this code, as we aren't using p5.js...
+       but since I'm showing you the code running in the p5 editor,
+       the editor expects p5.js to be here...
+       otherwise, it gives you a "TypeError: window.p5 is undefined".
+       We won't use any of p5.js's commands, though! -->
+  </head>
+  <body>
+    <div id="mapid" style="width: 600px; height: 400px;"></div>
+    <!-- Our web map will get placed into this div element -->
+
+    <script>
+
+        // Make a Leaflet map with L.map().
+        // Store the map in the variable 'map'.
+        // "mapid" is the 'id' of the DOM element to contain the map.
+        var map = L.map('mapid',
+                        {
+          								center: [49.265637, -123.256113],
+          								zoom: 15
+        								}  // this object holds map options
+                  );
+
+      var topoTiles = L.tileLayer(
+          								'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+                          {
+      										maxZoom: 17,
+      										attribution: 'Basemap data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Basemap style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+      									}
+      								).addTo(map);
+
+        //var myPoint = L.marker(
+        //                 [49.265637, -123.256113]
+        //              ).addTo(map);
+
+        //var myPoly = L.polygon(
+        //        			[
+        //        				[49.2797,-123.2678],
+        //                [49.2770,-123.2690],
+        //            		[49.2791,-123.2723],
+        //                [49.2797,-123.2678],
+        //              ],
+        //  						{color: 'red', weight: 6}
+        //						 ).addTo(map);
+
+        // load GeoJSON from a file on the web
+        // $ is jQuery.
+
+        var treeMarkerOptions = {
+        	radius: 4,
+        	fillColor: "#007800",
+        	color: "#000",
+        	weight: 1,
+        	opacity: 0.2,
+        	fillOpacity: 0.2
+      };
+
+        function onEachTree(feature, layer) {
+           // does this tree have a property named TAXA?
+           if (feature.properties && feature.properties.TAXA) {
+              layer.bindTooltip(feature.properties.TAXA);
+           }
+        }
+
+      $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubc-geospatial-opendata/master/ubcv/transportation/geojson/ubcv_bollards.geojson",
+                  function(data){
+        						// Once UBC trees GeoJSON layer is loaded
+          					// Then add it to the map
+        						L.geoJSON(data, {
+       								  pointToLayer: function (feature, latlng) {
+            							               return L.circleMarker(
+                                           latlng,
+                                           treeMarkerOptions
+                                         );
+        							                },
+                        onEachFeature: onEachTree
+                      }
+                    ).addTo(map);});
+    </script>
+  </body>
+</html>
