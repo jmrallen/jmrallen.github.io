@@ -32,8 +32,7 @@
       zoom: 5
     });
 
-    // Code from the next step will go here.
-      //Add an event listener that runs when a user clicks on the map element.
+    //Add an event listener that runs when a user clicks on the map element.
       map.on('click', (event) => {
         // If the user clicked on one of your markers, get its information.
         const features = map.queryRenderedFeatures(event.point, {
@@ -44,8 +43,26 @@
         }
         const feature = features[0];
 
-  // Code from the next step will go here.
+        
 });
+    // Code from the next step will go here.
+
+    var pointLayerId = 'ucdp1-afghanistan-tajikistan';
+      var pointData = map.getSource(pointLayerId)._data.features[0];
+
+      function animatePoint(timestamp) {
+        // Animate the point's location using the timestamp
+        pointData.geometry.coordinates = [Math.random() * 0.02 - 122.4376, Math.random() * 0.02 + 37.7577];
+        
+        // Update the data for the layer with the new point location
+        map.getSource(pointLayerId).setData(pointData);
+
+        // Request the next frame of the animation
+        requestAnimationFrame(animatePoint);
+      }
+
+      // Start the animation
+      requestAnimationFrame(animatePoint);
     </script>
   </body>
 </html>

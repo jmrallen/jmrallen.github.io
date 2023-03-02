@@ -1,61 +1,87 @@
-// Set up your Mapbox map
-mapboxgl.accessToken = 'pk.eyJ1IjoiaW9yb21pZWgiLCJhIjoiY2xlcmRweTRyMDNuaDN2bzBiMGw4ZWo2byJ9.x1cKGLXR128QXXQlQa3O6A';
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [-74.5, 40],
-  zoom: 9
-});
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox GL JS animate point</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaW9yb21pZWgiLCJhIjoiY2xlcmRweTRyMDNuaDN2bzBiMGw4ZWo2byJ9.x1cKGLXR128QXXQlQa3O6A';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-122.4443, 47.2529],
+            zoom: 12
+        });
 
-// Define your point data
-var pointData = [
-  { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.5, 40] } },
-  { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.6, 40.1] } },
-  { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.4, 40.2] } }
-];
+        // Add a source and layer displaying a point which will be animated in a circle.
+        map.on('load', function () {
+            map.addSource('point', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [{
+                        'type': 'Feature',
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-122.4443, 47.2529]
+                        }
+                    }]
+                }
+            });
 
-// Define your point layer
-map.on('load', function () {
-  map.addLayer({
-    'id': 'points',
-    'type': 'circle',
-    'source': {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': pointData
-      }
-    },
-    'paint': {
-      'circle-radius': 6,
-      'circle-color': '#B42222'
-    }
-  });
-});
+            map.addLayer({
+                'id': 'point',
+                'source': 'point',
+                'type': 'circle',
+                'paint': {
+                    'circle-radius': 10,
+                    'circle-color': '#007cbf'
+                }
+            });
 
-// Animate the point layer
-setInterval(function () {
-  // Remove the existing layer
-  map.removeLayer('points');
-  // Create a new point layer with updated data
-  var newPointData = [
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.6, 40] } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.4, 40.1] } },
-    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-74.5, 40.2] } }
-  ];
-  map.addLayer({
-    'id': 'points',
-    'type': 'circle',
-    'source': {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': newPointData
-      }
-    },
-    'paint': {
-      'circle-radius': 6,
-      'circle-color': '#B42222'
-    }
-  });
-}, 3000); // Update the points every 3 seconds
+            // Start the animation.
+            animatePoint();
+        });
+
+        // Function to animate the point.
+        function animatePoint() {
+            // Set the initial timestamp.
+            var time = 0;
+
+            // Animate the point for 5 seconds.
+            var duration = 5000;
+
+            // Define the animation function.
+            function animate() {
+                // Update the timestamp.
+                time = (time + 1000 / 60) % duration;
+
+                // Calculate the radius of the circle based on the timestamp.
+                var radius = Math.sin(time / duration * 2 * Math.PI) * 20 + 10;
+
+                // Update the circle radius.
+                map.setPaintProperty('point', 'circle-radius', radius);
+
+                // Request the next frame of the animation.
+                requestAnimationFrame(animate);
+            }
+
+            // Start the animation.
+            animate();
+        }
+    </script>
+</body>
+</html>
