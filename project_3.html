@@ -36,7 +36,7 @@
       map.on('click', (event) => {
         // If the user clicked on one of your markers, get its information.
         const features = map.queryRenderedFeatures(event.point, {
-          layers: ['ucdp1-afghanistan-tajikistan'] // replace with your layer name
+          layers: ['UCDP_github_cut'] // replace with your layer name
         });
         if (!features.length) {
           return;
@@ -45,24 +45,27 @@
 
         
 });
-    // Code from the next step will go here.
+map.on('load', function () {
+            // Add a dataset source
+            map.addSource('your-dataset', {
+              type: 'vector',
+              url: 'mapbox://ioromieh.clertgk2y00xw2bs0bdygmqp9'
+            });
 
-    var pointLayerId = 'ucdp1-afghanistan-tajikistan';
-      var pointData = map.getSource(pointLayerId)._data.features[0];
-
-      function animatePoint(timestamp) {
-        // Animate the point's location using the timestamp
-        pointData.geometry.coordinates = [Math.random() * 0.02 - 122.4376, Math.random() * 0.02 + 37.7577];
-        
-        // Update the data for the layer with the new point location
-        map.getSource(pointLayerId).setData(pointData);
-
-        // Request the next frame of the animation
-        requestAnimationFrame(animatePoint);
-      }
-
-      // Start the animation
-      requestAnimationFrame(animatePoint);
+            // Add a layer using the dataset source
+            map.addLayer({
+              'id': 'your-layer',
+              'type': 'circle',
+              'source': 'your-dataset',
+              'source-layer': 'UCDP_github_cut',
+              'paint': {
+                'circle-color': 'red',
+                'circle-radius': 6,
+                'circle-stroke-width': 2,
+                'circle-stroke-color': 'white'
+              }
+            });
+          });  
     </script>
   </body>
 </html>
