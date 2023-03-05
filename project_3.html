@@ -45,6 +45,28 @@ body { margin: 0; padding: 0; }
 );
 }
 );
+map.on('click', (event) => {
+  // If the user clicked on one of your markers, get its information.
+  const features = map.queryRenderedFeatures(event.point, {
+    layers: ['conflict_data'] // replace with your layer name
+  });
+  if (!features.length) {
+    return;
+  }
+  const feature = features[0];
+
+  // Code from the next step will go here.
+  /* 
+    Create a popup, specify its options 
+    and properties, and add it to the map.
+  */
+const popup = new mapboxgl.Popup({ offset: [0, -15] })
+  .setLngLat(feature.geometry.coordinates)
+  .setHTML(
+    `<h3>${feature.properties.date_start}</h3><p>${feature.properties.best_est}</p>`
+  )
+  .addTo(map);
+});
 </script>
 
 </body>
