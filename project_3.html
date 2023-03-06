@@ -35,8 +35,8 @@ body { margin: 0; padding: 0; }
       'source': 'conflict_data',
       'source-layer': 'UCDP_github_cut',
       'paint': {
-					'circle-color': '#ff69b4',
-					'circle-radius': 6,
+					'circle-color': '#0000FF',
+					//'circle-radius': 2,
 					'circle-stroke-width': 2,
 					'circle-stroke-color': 'white'
 }
@@ -53,7 +53,7 @@ map.on('click', (event) => {
   if (!features.length) {
     return;
   }
-  const feature = features[0];
+  var feature = features[0];
 
   // Code from the next step will go here.
   /* 
@@ -67,6 +67,47 @@ const popup = new mapboxgl.Popup({ offset: [0, -15] })
   )
   .addTo(map);
 });
+
+
+//Add animation
+        var radius = 0;
+        // Get all the features from the "conflict_data" layer
+        var features = map.querySourceFeatures('best_est', {sourceLayer: 'conflict_data'});
+        // Find the maximum value of the "best_est" property
+        var max = Math.max(...features.map(feature => feature.properties.best_est);
+        return isNaN(value) ? -Infinity : value;
+        );
+        var increasing = true;
+        setInterval(function() {
+          console.log(max)
+            if (increasing) {
+                radius += 1;
+            } else {
+                radius -= 1;
+            }
+            if (radius > max) {
+                increasing = false;
+            }
+            if (radius < 0) {
+                increasing = true;
+            }
+            map.setPaintProperty('conflict_data', 'circle-radius', radius + 100);
+        }, 100);
+
+//Set timeout
+
+  setTimeout(function() {
+    // Set the opacity of the point to 1 to make it appear
+    map.setPaintProperty('conflict_data', 'circle-opacity', 1);
+  }, 1000);
+  
+  setTimeout(function() {
+    // Set the opacity of the point to 0 to make it disappear
+    map.setPaintProperty('conflict_data', 'circle-opacity', 0);
+  }, 1000 + 10000); // Hide the point 1 second after it appears
+
+
+		
 </script>
 
 </body>
