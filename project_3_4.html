@@ -99,34 +99,61 @@ body {
 
     //Add data
     map.on('load', () => {
-    map.addLayer({
-        id: 'conflict_data',
-        type: 'circle',
-        source: {
-        type: 'geojson',
-        data: 'https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/90958bbfea1d2fe931cadf294acf015c359b53d4/UCDP_filtered2.geojson' // replace this with the url of your own geojson
-        },
-        paint: {
-        'circle-radius': 2,
-        'circle-color': [
-            'interpolate', ['linear'], 
-            ['to-number', ['get', 'best_est']], // Convert string to number
-            0, '#f1f075',
-            25, '#e55e5e'],
-        'circle-opacity': 1
-        },
-        filter: ['==', ['number', ['get', 'year']], 1989]
-    },
-    'road-label-simple' // Add layer below labels
-    );
-    document.getElementById('slider').addEventListener('input', (event) => {
-    const year = parseInt(event.target.value);
-    // update the map
-    map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
-    // update text in the UI
-  document.getElementById('active-hour').innerText = year;
-});
+      map.addLayer({
+          id: 'conflict_data',
+          type: 'circle',
+          source: {
+          type: 'geojson',
+          data: 'https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/90958bbfea1d2fe931cadf294acf015c359b53d4/UCDP_filtered2.geojson' // replace this with the url of your own geojson
+          },
+          paint: {
+          'circle-radius': 2.5,
+          'circle-color': [
+              'interpolate', ['linear'], 
+              ['to-number', ['get', 'best_est']], // Convert string to number
+              0, '#f1f075',
+              25, '#e55e5e'],
+          'circle-opacity': 1
+          },
+          filter: ['==', ['number', ['get', 'year']], 1989]
+      },
+      'road-label-simple' // Add layer below labels
+      );
+      document.getElementById('slider').addEventListener('input', (event) => {
+        const year = parseInt(event.target.value);
+        // update the map
+        map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
+        // update text in the UI
+        document.getElementById('active-hour').innerText = year;
+      });
+      map.on('click', (event) => {
+        // If the user clicked on one of your markers, get its information.
+        const features = map.queryRenderedFeatures(event.point, {
+          layers: ['conflict_data'] // replace with your layer name
+        });
+        if (!features.length) {
+          return;
+        }
+        var feature = features[0];
+
+        // Create a popup, specify its options and properties, and add it to the map.
+        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+      `   <h3>Year: ${feature.properties.year}</h3><p>Casualties: ${feature.properties.best_est}</p>`
+        )
+        .addTo(map);
+      });
+      // Change the cursor to a pointer when the mouse is over the places layer.
+      map.on('mouseenter', 'conflict_data', () => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      // Change it back to a pointer when it leaves.
+      map.on('mouseleave', 'conflict_data', () => {
+        map.getCanvas().style.cursor = '';
+      });
     });
+  
 </script>
 
 </body>
