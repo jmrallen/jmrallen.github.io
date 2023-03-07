@@ -76,7 +76,7 @@ const popup = new mapboxgl.Popup({ offset: [0, -15] })
 
 //Add animation
         // Get all features from the 'conflict_data' layer
-var features = map.querySourceFeatures('best_est', {sourceLayer: 'conflict_data'});
+var features = map.querySourceFeatures('date_start', {sourceLayer: 'conflict_data'});
 
 // Sort the features by the "delay" property
 features.sort(function(a, b) {
@@ -110,12 +110,12 @@ function animatePoint(feature) {
       increasing = false;
     }
     if (radius < 0) {
-      increasing = false;
+      increasing = true;
     }
     map.setPaintProperty('conflict_data', 'circle-radius', radius);
   }, 100);
 }
-console.log(2);
+
 
 
 		
