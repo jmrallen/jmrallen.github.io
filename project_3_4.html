@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class='session' id='sliderbar'>
-    <h2>Year: <label id='active-hour'>1989</label></h2>
+    <h2>Year: <label id='active-year'>1989</label></h2>
     <input id='slider' class='row' type='range' min='1989' max='2021' step='1' value='1989' />
   </div>
 </div>
@@ -119,12 +119,12 @@ body {
       },
       'road-label-simple' // Add layer below labels
       );
-      document.getElementById('slider').addEventListener('input', (event) => {
+      document.getElementById('slider').addEventListener('input', (event) => { //Add listener to get value from slider
         const year = parseInt(event.target.value);
-        // update the map
+        // Update the map
         map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
-        // update text in the UI
-        document.getElementById('active-hour').innerText = year;
+        // Update text in the UI
+        document.getElementById('active-year').innerText = year;
       });
       map.on('click', (event) => {
         // If the user clicked on one of your markers, get its information.
