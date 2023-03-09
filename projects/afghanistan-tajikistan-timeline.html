@@ -7,6 +7,7 @@
 <title>Violent events in Afghanistan & Tajikistan: 1989-2021</title>
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
 <div id='map'></div>
 <body>
@@ -31,6 +32,7 @@
     <h2>Year: <label id='active-year'>1989</label></h2>
     <input id='slider' class='row' type='range' min='1989' max='2021' step='1' value='1989' />
   </div>
+  <button id="pitch-btn">Change Pitch</button>
 </div>
 
 <style>
@@ -158,7 +160,22 @@ body {
         map.getCanvas().style.cursor = '';
       });
     });
-  
+    //Add pitch button
+    var pitchBtn = document.getElementById('pitch-btn');
+
+    pitchBtn.addEventListener('click', function() {
+      var currentPitch = map.getPitch();
+      // Toggle between two pitch values
+      var newPitch = currentPitch === 0 ? 60 : 0;
+      map.easeTo({
+        pitch: newPitch,
+        duration: 1000 // animation duration in ms
+      });
+    });
+
+
+    //Add navigation control
+    map.addControl(new mapboxgl.NavigationControl());
 </script>
 
 </body>
