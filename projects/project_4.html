@@ -25,7 +25,13 @@
   <body>
     <div id="mapid" style="width: 600px; height: 400px;"></div>
     <!-- Our web map will get placed into this div element -->
+    <div id="controls" style="margin: 15px;">
+      <button id="showAllTreesButton">Show All Trees</button>
 
+      <span style="display:inline-block; width: 30px"></span>
+      <input type="text" id="highlightTreesTextEntry" placeholder="tree taxa" />
+      <button id="highlightTreesButton">Highlight</button>
+    </div>
     <script>
 
         // Make a Leaflet map with L.map().
