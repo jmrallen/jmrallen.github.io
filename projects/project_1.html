@@ -30,7 +30,7 @@ function setup(){
   myMap.overlay(canvas) 
 
   // Load the data
-  meteorites = loadTable('C:/Users/Jeremy/OneDrive/Documents/GitHub/ioromieh.github.io/projects/Meteorite_Landings.csv', 'csv', 'header');
+  meteorites = loadTable("https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/main/assets/Meteorite_Landings.csv", 'csv', 'header');
   console.log(meteorites)
 
   // Only redraw the meteorites when the map change and not every frame.
