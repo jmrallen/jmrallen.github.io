@@ -26,10 +26,8 @@
     <div id="mapid" style="width: 600px; height: 400px;"></div>
     <!-- Our web map will get placed into this div element -->
     <div id="controls" style="margin: 15px;">
-      <button id="showAllTreesButton">Show All Trees</button>
-
       <span style="display:inline-block; width: 30px"></span>
-      <input type="text" id="highlightTreesTextEntry" placeholder="tree taxa" />
+      <input type="text" id="highlightTreesTextEntry" placeholder="Bollard Condition" />
       <button id="highlightTreesButton">Highlight</button>
     </div>
     <script>
@@ -60,9 +58,30 @@
         	opacity: 0.2,
         	fillOpacity: 0.2
       };
+      var treeMarkerHighlightedOptions = {
+        	radius: 4,
+        	fillColor: "#FF9900",  // Make highlighted trees orange.
+        	color: "#000",
+        	weight: 1,
+        	opacity: 0.3,
+        	fillOpacity: 0.5
+      };
+     
+      // Get a reference to the button element
+      const myButton = document.querySelector('#highlightTreesButton');
 
-
-        $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubc-geospatial-opendata/master/ubcv/transportation/geojson/ubcv_bollards.geojson", function(data){
+      // Add a click event listener to the button
+      myButton.addEventListener('click', function() {
+        // Get the text of the button and log it to the console
+        const myInput = document.querySelector('#highlightTreesTextEntry');
+        const inputValue = myInput.value;
+        console.log(inputValue);
+        map.eachLayer(function(layer) {
+    if (layer.feature) {
+      map.removeLayer(layer);
+    }
+  });  
+      $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubc-geospatial-opendata/master/ubcv/transportation/geojson/ubcv_bollards.geojson", function(data){
             // Once UBC bollards GeoJSON layer is loaded
             // Then add it to the map
             L.geoJSON(data, {
@@ -71,10 +90,13 @@
                 },
                 filter: function (feature, layer) {
                     // only include features where the BOL_COND2020 property is "Good"
-                    return feature.properties.BOL_COND2020 === "Good";
+                    return feature.properties.BOL_COND2020 === inputValue;
                 }
             }).addTo(map);
         });
+      });
+
+        
     </script>
   </body>
 </html>
