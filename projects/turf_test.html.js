@@ -7,7 +7,7 @@
 <title>Violent events in Afghanistan & Tajikistan: 1989-2021</title>
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
 <div id='map'></div>
 <body>
@@ -142,29 +142,30 @@ body {
       'land-structure-line' // Add layer below labels
       );
        //Set up hex grid
-        var conflict_data = map.querySourceFeatures('conflict_data').data;
-        var pointBbox = turf.bbox(conflict_data);
-        var bboxPolygon = turf.bboxPolygon(bbox);
+        //var conflict_data = map.querySourceFeatures('conflict_data').data;
+        //var pointBbox = turf.bbox(conflict_data);
+        //var bboxPolygon = turf.bboxPolygon(bbox);
 
-        var bbox = [pointBbox];
+        var bbox = [-96,31,-84,40];
         var cellSide = 50;
         var options = {units: 'miles'};
         var hexgrid = turf.hexGrid(bbox, cellSide, options);
       
-        map.addSource('hexgrid', {
-        'type': 'geojson',
-        'data': hexgrid
-        });
-        map.addLayer({
-          'id': 'hexgrid',
-          'type': 'fill',
-          'source': 'hexgrid',
-          'layout': {},
-          'paint': {
-            'fill-color': '#0066ff',
-            'fill-opacity': 0.5
-          }
-        });
+        var layer = {
+    "id": "hexgrid",
+    "type": "fill",
+    "source": {
+        "type": "geojson",
+        "data": turf.helpers.featureCollection(hexgrid)
+    },
+    "paint": {
+        "fill-color": "#ff0000",
+        "fill-opacity": 0.5
+    }
+    };
+
+    map.addLayer(layer);
+
 
 
 
