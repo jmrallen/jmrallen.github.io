@@ -141,17 +141,14 @@ body {
       },
       'land-structure-line' // Add layer below labels
       );
-       //Set up hex grid
-        var conflict_data = map.querySourceFeatures('conflict_data').data;
-        var pointBbox = turf.bbox(conflict_data);
-        var bboxPolygon = turf.bboxPolygon(bbox);
-
-        var bbox = [pointBbox];
+      //Set up hex grid
+        var bbox = [ 59.63725408282491,29.21854149593267,75.18693057647818,38.71503078253102];
         var cellSide = 50;
         var options = {units: 'miles'};
         var hexgrid = turf.hexGrid(bbox, cellSide, options);
       
-        map.addSource('hexgrid', {
+      
+      map.addSource('hexgrid', {
         'type': 'geojson',
         'data': hexgrid
         });
