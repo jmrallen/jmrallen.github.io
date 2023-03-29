@@ -7,7 +7,7 @@
 <title>Violent events in Afghanistan & Tajikistan: 1989-2021</title>
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
 <div id='map'></div>
 <body>
@@ -119,36 +119,146 @@ body {
         center: [66.81, 34.43]
     });
 
-   
-       //Set up hex grid
-        //var conflict_data = map.querySourceFeatures('conflict_data').data;
-        //var pointBbox = turf.bbox(conflict_data);
-        //var bboxPolygon = turf.bboxPolygon(bbox);
-
-        var bbox = [-96,31,-84,40];
-        var cellSide = 50;
-        var options = {units: 'miles'};
-        var hexgrid = turf.hexGrid(bbox, cellSide, options);
+    //Add data
+    map.on('load', () => {
+      map.addLayer({
+          id: 'conflict_data',
+          type: 'circle',
+          source: {
+          type: 'geojson',
+          data: 'https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/90958bbfea1d2fe931cadf294acf015c359b53d4/UCDP_filtered2.geojson' // replace this with the url of your own geojson
+          },
+          paint: {
+          'circle-radius': 2.5,
+          'circle-color': [
+              'interpolate', ['linear'], 
+              ['to-number', ['get', 'best_est']], // Convert string to number
+              0, '#f1f075',
+              25, '#e55e5e'],
+          'circle-opacity': 1
+          },
+          filter: ['==', ['number', ['get', 'year']], 1989]
+      },
+      'land-structure-line' // Add layer below labels
+      );
+      //Set up hex grid
+      var bbox = [59.63725408282491,29.21854149593267,75.18693057647818,38.71503078253102];
+      var cellSide = 25;
+      var options = {units: 'kilometers'};
+      var hexgrid = turf.hexGrid(bbox, cellSide, options);
       
-        var layer = {
-    "id": "hexgrid",
-    "type": "fill",
-    "source": {
-        "type": "geojson",
-        "data": turf.helpers.featureCollection(hexgrid)
-    },
-    "paint": {
-        "fill-color": "#ff0000",
-        "fill-opacity": 0.5
-    }
-    };
+      // Define your point data (example data)
+      var points = turf.randomPoint(2000, {bbox: bbox});
+      console.log(points)
+      
+      points.features.forEach(function(pt) {
+        pt.properties = {'weight': 1}
+      });
 
-    map.addLayer(layer);
+      // Count points in hexagons and attach to hexagons as a property
+      var collected = turf.collect(hexgrid, points, 'weight', 'totalsum');
+      console.log(collected);
+
+      // Make a 'deep copy' of the 'collected' object so it isn't altered by hexgridWithCount code below... otherwise when the 'lazy evaluation' of 'console.log(collected)' above happens, you will see pt_count properties, which would be even more confusing than this comment!
+      var collected_copy = JSON.parse(JSON.stringify(collected))
+      
+      var hexgridWithCount = turf.featureCollection(collected_copy.features.map(function(feature) {
+        if (feature.properties.totalsum) {
+          feature.properties.pt_count = feature.properties.totalsum.length;
+        } else {
+          feature.properties.pt_count = 0;
+        }
+        delete feature.properties.totalsum;
+        return feature;
+      }));
+      console.log(hexgridWithCount);
 
 
 
 
+      // Extrude hexagons based on point count
+      //var extruded = turf3.extrude(hexgridWithCount, {height: ['get', 'pt_count']});
 
+      map.addSource('hexgrid', {
+        'type': 'geojson',
+        'data': hexgridWithCount
+      });
+      var heightRamp = [ [0, 0], [1, 10000], [2, 20000], [3, 30000] ];
+      var colorRamp = [  "#f7fcf5",  "#e5f5e0",  "#c7e9c0",  "#a1d99b",  "#74c476",  "#41ab5d",  "#238b45",  "#006d2c",  "#00441b"];
+      map.addLayer({
+        'id': 'hexgrid',
+        'type': 'fill-extrusion',
+        'source': 'hexgrid',
+        //'layout': {},
+        'paint': {
+          'fill-extrusion-color': {
+            property: 'pt_count',
+            stops: colorRamp.map((d, i) => [i, d])
+            },
+            'fill-extrusion-height': ['*', ['get', 'pt_count'], 10000],
+          "fill-extrusion-height-transition": {
+                    duration: 2000
+                },
+                "fill-extrusion-color-transition": {
+                    duration: 2000
+                },
+          'fill-extrusion-opacity': 0.5
+        },
+        'filter': ['!=', 'pt_count', 0] // Only display features with non-zero pt_count values
+      });
+
+
+
+      //Add slider to page
+      document.getElementById('slider').addEventListener('input', (event) => { //Add listener to get value from slider
+        const year = parseInt(event.target.value);
+        // Update the map
+        map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
+        // Update text in the UI
+        document.getElementById('active-year').innerText = year;
+
+      });
+
+      //Create play 
+            map.on('click', (event) => {
+        // If the user clicked on one of your markers, get its information.
+        const features = map.queryRenderedFeatures(event.point, {
+          layers: ['conflict_data'] // replace with your layer name
+        });
+        if (!features.length) {
+          return;
+        }
+        var feature = features[0];
+
+        // Create a popup, specify its options and properties, and add it to the map.
+        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+      `   <h3>Year: ${feature.properties.year}</h3><p>Casualties: ${feature.properties.best_est}</p>`
+        )
+        .addTo(map);
+      });
+      // Change the cursor to a pointer when the mouse is over the places layer.
+      map.on('mouseenter', 'conflict_data', () => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      // Change it back to a pointer when it leaves.
+      map.on('mouseleave', 'conflict_data', () => {
+        map.getCanvas().style.cursor = '';
+      });
+    });
+    //Add pitch button
+    var pitchBtn = document.getElementById('pitch-btn');
+
+    pitchBtn.addEventListener('click', function() {
+      var currentPitch = map.getPitch();
+      // Toggle between two pitch values
+      var newPitch = currentPitch === 0 ? 60 : 0;
+      map.easeTo({
+        pitch: newPitch,
+        duration: 1000 // animation duration in ms
+      });
+    });
 
       //Add navigation control
     map.addControl(new mapboxgl.NavigationControl());

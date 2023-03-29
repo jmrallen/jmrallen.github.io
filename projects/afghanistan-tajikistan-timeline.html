@@ -142,7 +142,6 @@ body {
       'land-structure-line' // Add layer below labels
       );
       //Set up hex grid
-      var colorRamp = [  "#f7fcf5",  "#e5f5e0",  "#c7e9c0",  "#a1d99b",  "#74c476",  "#41ab5d",  "#238b45",  "#006d2c",  "#00441b"];
       var bbox = [59.63725408282491,29.21854149593267,75.18693057647818,38.71503078253102];
       var cellSide = 50;
       var options = {units: 'miles'};
@@ -184,17 +183,28 @@ body {
         'type': 'geojson',
         'data': hexgridWithCount
       });
+      var heightRamp = [ [0, 0], [10, 100], [20, 200], [30, 300] ];
+      var colorRamp = [  "#f7fcf5",  "#e5f5e0",  "#c7e9c0",  "#a1d99b",  "#74c476",  "#41ab5d",  "#238b45",  "#006d2c",  "#00441b"];
       map.addLayer({
         'id': 'hexgrid',
         'type': 'fill-extrusion',
         'source': 'hexgrid',
-        'layout': {},
+        //'layout': {},
         'paint': {
           'fill-extrusion-color': {
             property: 'pt_count',
             stops: colorRamp.map((d, i) => [i, d])
             },
-          //'fill-extrusion-height': ,
+            'fill-extrusion-height': {
+              property: 'pt_count',
+              stops: heightRamp.map((d, i) => [i, d[1]])
+            },
+          "fill-extrusion-height-transition": {
+                    duration: 2000
+                },
+                "fill-extrusion-color-transition": {
+                    duration: 2000
+                },
           'fill-extrusion-opacity': 0.5
         }
       });
