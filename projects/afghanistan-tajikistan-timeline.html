@@ -142,26 +142,62 @@ body {
       'land-structure-line' // Add layer below labels
       );
       //Set up hex grid
-        var bbox = [ 59.63725408282491,29.21854149593267,75.18693057647818,38.71503078253102];
-        var cellSide = 50;
-        var options = {units: 'miles'};
-        var hexgrid = turf.hexGrid(bbox, cellSide, options);
+      var colorRamp = [  "#f7fcf5",  "#e5f5e0",  "#c7e9c0",  "#a1d99b",  "#74c476",  "#41ab5d",  "#238b45",  "#006d2c",  "#00441b"];
+      var bbox = [59.63725408282491,29.21854149593267,75.18693057647818,38.71503078253102];
+      var cellSide = 50;
+      var options = {units: 'miles'};
+      var hexgrid = turf.hexGrid(bbox, cellSide, options);
       
+      // Define your point data (example data)
+      var points = turf.randomPoint(500, {bbox: bbox});
+      console.log(points)
       
+      points.features.forEach(function(pt) {
+        pt.properties = {'weight': 1}
+      });
+
+      // Count points in hexagons and attach to hexagons as a property
+      var collected = turf.collect(hexgrid, points, 'weight', 'totalsum');
+      console.log(collected);
+
+      // Make a 'deep copy' of the 'collected' object so it isn't altered by hexgridWithCount code below... otherwise when the 'lazy evaluation' of 'console.log(collected)' above happens, you will see pt_count properties, which would be even more confusing than this comment!
+      var collected_copy = JSON.parse(JSON.stringify(collected))
+      
+      var hexgridWithCount = turf.featureCollection(collected_copy.features.map(function(feature) {
+        if (feature.properties.totalsum) {
+          feature.properties.pt_count = feature.properties.totalsum.length;
+        } else {
+          feature.properties.pt_count = 0;
+        }
+        delete feature.properties.totalsum;
+        return feature;
+      }));
+      console.log(hexgridWithCount);
+
+
+
+
+      // Extrude hexagons based on point count
+      //var extruded = turf3.extrude(hexgridWithCount, {height: ['get', 'pt_count']});
+
       map.addSource('hexgrid', {
         'type': 'geojson',
-        'data': hexgrid
-        });
-        map.addLayer({
-          'id': 'hexgrid',
-          'type': 'fill',
-          'source': 'hexgrid',
-          'layout': {},
-          'paint': {
-            'fill-color': '#0066ff',
-            'fill-opacity': 0.5
-          }
-        });
+        'data': hexgridWithCount
+      });
+      map.addLayer({
+        'id': 'hexgrid',
+        'type': 'fill-extrusion',
+        'source': 'hexgrid',
+        'layout': {},
+        'paint': {
+          'fill-extrusion-color': {
+            property: 'pt_count',
+            stops: colorRamp.map((d, i) => [i, d])
+            },
+          //'fill-extrusion-height': ,
+          'fill-extrusion-opacity': 0.5
+        }
+      });
 
 
 
