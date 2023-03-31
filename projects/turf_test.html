@@ -139,42 +139,9 @@ body {
       },
       filter: ['==', ['number', ['get', 'year']], 1989]
     },
-    'land-structure-line' // Add layer below labels
+      'land-structure-line' // Add layer below labels
     );
-    //Add the layer again within an event listener to see if the layer is already added
-    document.getElementById('pitch-btn').addEventListener('click', function() {
-      var isPointLayerVisible = map.getLayer('conflict_data') !== undefined;
-      if (isPointLayerVisible) {
-        // if the layer is visible, remove it from the map
-        map.removeLayer('conflict_data');
-        map.removeSource('conflict_data');
-        
-      } else {
-        // if the layer is not visible, add it to the map
-        map.addLayer({
-          id: 'conflict_data',
-          type: 'circle',
-          source: {
-            type: 'geojson',
-            data: 'https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/90958bbfea1d2fe931cadf294acf015c359b53d4/UCDP_filtered2.geojson' // replace this with the url of your own geojson
-          },
-          paint: {
-            'circle-radius': 2.5,
-            'circle-color': [
-              'interpolate', ['linear'], 
-              ['to-number', ['get', 'best_est']], // Convert string to number
-              0, '#f1f075',
-              25, '#e55e5e'
-            ],
-            'circle-opacity': 1
-          },
-          filter: ['==', ['number', ['get', 'year']], 1989]
-        },
-        'land-structure-line' // Add layer below labels
-        );
-      }
-    });
-    
+  
     //Set up hex grid
     var bbox = [59.46052141185277,28.578377031819187,75.84005654475624,43.53118996496718];
     var cellSide = 25;
@@ -205,140 +172,134 @@ body {
       map.setPaintProperty('hexgrid', 'fill-extrusion-opacity', fillExtrusionOpacity);
     });
 
-
     // Add slider to page
-  document.getElementById('slider').addEventListener('input', (event) => {
-    // Update targetYear with slider value
-    targetYear = parseInt(event.target.value);
-    console.log(targetYear);
-
+    document.getElementById('slider').addEventListener('input', (event) => {
+      // Update targetYear with slider value
+      targetYear = parseInt(event.target.value);
   
-// Fetch the GeoJSON data from the URL
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
+      // Fetch the GeoJSON data from the URL
+      fetch(url)
+      .then(response => response.json())
+      .then(data => {
         // Filter the GeoJSON data for the target year
         var filteredData = data.features.filter(feature => feature.properties.year === targetYear);
 
         // Convert the filtered GeoJSON data to turf.js format
         var turfPoints = turf.featureCollection(filteredData);
 
-    // Count points in hexagons and attach to hexagons as a property
-    var collected = turf.collect(hexgrid, turfPoints, 'best_est', 'totalsum');
+        // Count points in hexagons and attach to hexagons as a property
+        var collected = turf.collect(hexgrid, turfPoints, 'best_est', 'totalsum');
+          
+        // Make a 'deep copy' of the 'collected' object so it isn't altered by hexgridWithCount code below... otherwise when the 'lazy evaluation' of 'console.log(collected)' above happens, you will see pt_count properties, which would be even more confusing than this comment!
+        var collected_copy = JSON.parse(JSON.stringify(collected))
         
-
-      // Make a 'deep copy' of the 'collected' object so it isn't altered by hexgridWithCount code below... otherwise when the 'lazy evaluation' of 'console.log(collected)' above happens, you will see pt_count properties, which would be even more confusing than this comment!
-      var collected_copy = JSON.parse(JSON.stringify(collected))
-      
-      var hexgridWithCount = turf.featureCollection(collected_copy.features.map(function(feature) {
-        if (feature.properties.totalsum) {
-          feature.properties.pt_count = feature.properties.totalsum.length;
-        } else {
-          feature.properties.pt_count = 0;
+        var hexgridWithCount = turf.featureCollection(collected_copy.features.map(function(feature) {
+          if (feature.properties.totalsum) {
+            feature.properties.pt_count = feature.properties.totalsum.length;
+          } else {
+            feature.properties.pt_count = 0;
+          }
+          delete feature.properties.totalsum;
+          return feature;
+        }));
+        console.log(hexgridWithCount);
+        if(map.getLayer('hexgrid') !== undefined) {
+          map.removeLayer('hexgrid');
+          map.removeSource('hexgrid');
         }
-        delete feature.properties.totalsum;
-        return feature;
-      }));
-      console.log(hexgridWithCount);
-      if(map.getLayer('hexgrid') !== undefined) {
-        map.removeLayer('hexgrid');
-        map.removeSource('hexgrid');
-      }
-      map.addSource('hexgrid', {
-        'type': 'geojson',
-        'data': hexgridWithCount
-      });
-      var heightRamp = [ [0, 0], [1, 10000], [2, 20000], [3, 30000] ];
-      var colorRamp = [  "#f7fcf5",  "#e5f5e0",  "#c7e9c0",  "#a1d99b",  "#74c476",  "#41ab5d",  "#238b45",  "#006d2c",  "#00441b"];
-      
-      // if the layer is not visible, add it to the map
+        map.addSource('hexgrid', {
+          'type': 'geojson',
+          'data': hexgridWithCount
+        });
+        var heightRamp = [ [0, 0], [1, 500], [2, 1000], [3, 1500] ];
+        var colorRamp = [  [0, '#f1f075'],[1, '#f0d44e'],[2, '#eebf41'],[3, '#ebaa34'],[4, '#e99628'],[5, '#e6831e'],[6, '#e27015'],[7, '#de5d0d'],[8, '#db4a06'],[25, '#e55e5e']];
+        
+        // If the layer is not visible, add it to the map
         map.addLayer({
-            'id': 'hexgrid',
-            'type': 'fill-extrusion',
-            'source': 'hexgrid',
-            //'layout': {},
-            'paint': {
-              'fill-extrusion-color': {
-                property: 'pt_count',
-                stops: colorRamp.map((d, i) => [i, d])
-                },
-                'fill-extrusion-height': ['*', ['get', 'pt_count'], 10000],
-              "fill-extrusion-height-transition": {
-                        duration: 2000
-                    },
-                    "fill-extrusion-color-transition": {
-                        duration: 2000
-                    },
-              'fill-extrusion-opacity': 0
+          'id': 'hexgrid',
+          'type': 'fill-extrusion',
+          'source': 'hexgrid',
+          'paint': {
+            'fill-extrusion-color': {
+              property: 'pt_count',
+              stops: colorRamp
             },
-            'filter': ['!=', 'pt_count', 0], // Only display features with non-zero pt_count values
-            'maxzoom': 9 // hexbins will disappear when zoomed in past level 9
-          });          
+            'fill-extrusion-height': ['*', ['get', 'pt_count'], 5000],
+            "fill-extrusion-height-transition": {
+              duration: 2000
+            },
+            "fill-extrusion-color-transition": {
+              duration: 2000
+            },
+            'fill-extrusion-opacity': 0
+          },
+          'filter': ['!=', 'pt_count', 0], // Only display features with non-zero pt_count values
+          'maxzoom': 9 // hexbins will disappear when zoomed in past level 9
+        });          
       });
-  });
+    });
     // Manually trigger slider input event to initialize grid with default target year
     var event = new Event('input');
     slider.dispatchEvent(event);
 
-      //Add slider to page
-document.getElementById('slider').addEventListener('input', (event) => {
-  const year = parseInt(event.target.value);
+    //Add slider to page
+    document.getElementById('slider').addEventListener('input', (event) => {
+      const year = parseInt(event.target.value);
     
-  // Update text in the UI
-  document.getElementById('active-year').innerText = year;
+      // Update text in the UI
+      document.getElementById('active-year').innerText = year;
   
-  // Check if the conflict_data layer exists
-  if (map.getLayer('conflict_data')) {
-    // Update the filter
-    map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
-  }
-});
+      // Check if the conflict_data layer exists
+      if (map.getLayer('conflict_data')) {
+        // Update the filter
+        map.setFilter('conflict_data', ['==', ['number', ['get', 'year']], year]);
+      }
+    });
 
-
-      //Create play 
-            map.on('click', (event) => {
-        // If the user clicked on one of your markers, get its information.
-        const features = map.queryRenderedFeatures(event.point, {
-          layers: ['conflict_data'] // replace with your layer name
-        });
-        if (!features.length) {
-          return;
-        }
-        var feature = features[0];
-
-        // Create a popup, specify its options and properties, and add it to the map.
-        const popup = new mapboxgl.Popup({ offset: [0, -15] })
-        .setLngLat(feature.geometry.coordinates)
-        .setHTML(
-      `   <h3>Year: ${feature.properties.year}</h3><p>Casualties: ${feature.properties.best_est}</p>`
-        )
-        .addTo(map);
+    //Create play 
+    map.on('click', (event) => {
+      // If the user clicked on one of your markers, get its information.
+      const features = map.queryRenderedFeatures(event.point, {
+        layers: ['conflict_data'] // replace with your layer name
       });
-      // Change the cursor to a pointer when the mouse is over the places layer.
-      map.on('mouseenter', 'conflict_data', () => {
+      if (!features.length) {
+        return;
+      }
+      var feature = features[0];
+
+      // Create a popup, specify its options and properties, and add it to the map.
+      const popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML(
+        `<h3>Year: ${feature.properties.year}</h3><p>Casualties: ${feature.properties.best_est}</p>`
+      )
+      .addTo(map);
+    });
+    
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'conflict_data', () => {
         map.getCanvas().style.cursor = 'pointer';
-      });
-      // Change it back to a pointer when it leaves.
-      map.on('mouseleave', 'conflict_data', () => {
-        map.getCanvas().style.cursor = '';
-      });
     });
-    //Add pitch button
-    var pitchBtn = document.getElementById('pitch-btn');
-
-    pitchBtn.addEventListener('click', function() {
-      var currentPitch = map.getPitch();
-      // Toggle between two pitch values
-      var newPitch = currentPitch === 0 ? 60 : 0;
-      map.easeTo({
-        pitch: newPitch,
-        duration: 1000 // animation duration in ms
-      });
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'conflict_data', () => {
+      map.getCanvas().style.cursor = '';
     });
+  });
+  //Add pitch button
+  var pitchBtn = document.getElementById('pitch-btn');
 
-      //Add navigation control
-    map.addControl(new mapboxgl.NavigationControl());
+  pitchBtn.addEventListener('click', function() {
+    var currentPitch = map.getPitch();
+    // Toggle between two pitch values
+    var newPitch = currentPitch === 0 ? 60 : 0;
+    map.easeTo({
+      pitch: newPitch,
+      duration: 1000 // animation duration in ms
+    });
+  });
+
+  //Add navigation control
+  map.addControl(new mapboxgl.NavigationControl());
 </script>
-
 </body>
 </html>
