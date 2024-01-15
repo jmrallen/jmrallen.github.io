@@ -128,7 +128,7 @@ body {
         data: 'https://raw.githubusercontent.com/ioromieh/ioromieh.github.io/90958bbfea1d2fe931cadf294acf015c359b53d4/UCDP_filtered2.geojson' // replace this with the url of your own geojson
       },
       paint: {
-        'circle-radius': 2.5,
+        'circle-radius': 3,
         'circle-color': [
           'interpolate', ['linear'], 
           ['to-number', ['get', 'best_est']], // Convert string to number
@@ -211,7 +211,7 @@ body {
           'type': 'geojson',
           'data': hexgridWithCount
         });
-        var heightRamp = [ [0, 0], [1, 500], [2, 1000], [3, 1500] ];
+        var heightRamp = [ [0, 0], [1, 100], [2, 200], [3, 300], [4, 400], [5, 500], [6, 600] ];
         var colorRamp = [  [0, '#f1f075'],[1, '#f0d44e'],[2, '#eebf41'],[3, '#ebaa34'],[4, '#e99628'],[5, '#e6831e'],[6, '#e27015'],[7, '#de5d0d'],[8, '#db4a06'],[25, '#e55e5e']];
         
         // If the layer is not visible, add it to the map
@@ -224,7 +224,7 @@ body {
               property: 'pt_count',
               stops: colorRamp
             },
-            'fill-extrusion-height': ['*', ['get', 'pt_count'], 5000],
+            'fill-extrusion-height': ['*', ['get', 'pt_count'], 2000],
             "fill-extrusion-height-transition": {
               duration: 2000
             },
@@ -234,7 +234,7 @@ body {
             'fill-extrusion-opacity': 0
           },
           'filter': ['!=', 'pt_count', 0], // Only display features with non-zero pt_count values
-          'maxzoom': 9 // hexbins will disappear when zoomed in past level 9
+          'maxzoom': 12 // hexbins will disappear when zoomed in past level 9
         });          
       });
     });
