@@ -81,12 +81,16 @@
 #header {
   top: 50px;
   height: calc(100% - 50px);
+  text-align: center;
+  align-items: center;
 }
 
 /* Adjust avatar image to not get cut off */
 #header .image.avatar {
   width: 10em;
   max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #header .image.avatar img {
@@ -110,7 +114,7 @@ body.no-sidebar .site-nav {
 
 /* No-sidebar pages need top padding for the nav bar */
 body.no-sidebar #main {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 /* Large screens (sidebar shrinks to 20%) */

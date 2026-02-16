@@ -181,7 +181,7 @@ body.no-sidebar {
 body.no-sidebar #main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 80px 2em 2em 2em;
 }
 
 body.no-sidebar #header {
@@ -429,7 +429,7 @@ body.no-sidebar #footer .inner {
 }
 
 .map-container .map-console .session {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .map-container .map-console .row {
@@ -453,9 +453,9 @@ body.no-sidebar #footer .inner {
   background-color: var(--accent);
   border: none;
   color: #fff;
-  padding: 6px 14px;
-  font-size: 13px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -482,6 +482,10 @@ body.no-sidebar #footer .inner {
 
 .map-fullscreen-btn:hover {
   background: var(--bg-secondary);
+}
+
+.map-container .mapboxgl-ctrl-top-right {
+  top: 50px;
 }
 
 .map-container.fullscreen {
@@ -618,12 +622,70 @@ body.no-sidebar #footer .inner {
 }
 
 /* ============================================
+   Recent Work thumbnail hover overlay
+   ============================================ */
+
+.work-item {
+  position: relative;
+}
+
+.work-item .image.thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.work-item .image.thumb img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  transition: filter 0.3s;
+}
+
+/* Remove the default "View" poptrox overlay */
+.work-item .image.thumb:after {
+  display: none !important;
+}
+
+/* Title overlay */
+.work-item .image.thumb .thumb-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.work-item .image.thumb:hover img {
+  filter: brightness(0.6);
+}
+
+.work-item .image.thumb:hover .thumb-title {
+  opacity: 1;
+}
+
+/* ============================================
    Responsive adjustments for no-sidebar pages
    ============================================ */
 
 @media screen and (max-width: 736px) {
   body.no-sidebar #main {
-    padding: 1em;
+    padding: 80px 1em 1em 1em;
   }
 
   .map-container {
