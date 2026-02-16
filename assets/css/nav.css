@@ -1,0 +1,182 @@
+/* ============================================
+   nav.css — Top navigation bar
+   ============================================ */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 25%;
+  right: 0;
+  z-index: 10000;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: background 0.3s, border-color 0.3s, left 0.3s;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav .nav-links li a {
+  display: block;
+  padding: 0.5em 1.2em;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  border: none;
+}
+
+.site-nav .nav-links li a:hover,
+.site-nav .nav-links li a.active {
+  color: var(--accent);
+}
+
+.site-nav .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .theme-toggle {
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 0.4em;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.site-nav .theme-toggle:hover {
+  color: var(--accent);
+}
+
+/* Mobile hamburger */
+.site-nav .nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.3em;
+  cursor: pointer;
+  padding: 0.4em;
+}
+
+/* Adjust Strata sidebar header to sit below nav */
+#header {
+  top: 50px;
+  height: calc(100% - 50px);
+}
+
+/* Adjust avatar image to not get cut off */
+#header .image.avatar {
+  width: 10em;
+  max-width: 80%;
+}
+
+#header .image.avatar img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Subtitle in sidebar */
+#header p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-top: 0.5em;
+}
+
+/* No-sidebar pages: nav spans full width */
+body.no-sidebar .site-nav {
+  left: 0;
+}
+
+/* No-sidebar pages need top padding for the nav bar */
+body.no-sidebar #main {
+  padding-top: 70px;
+}
+
+/* Large screens (sidebar shrinks to 20%) */
+@media screen and (max-width: 1280px) {
+  .site-nav {
+    left: 20%;
+  }
+
+  #header .image.avatar {
+    width: 8em;
+  }
+}
+
+/* Medium screens (sidebar collapses, becomes stacked header) */
+@media screen and (max-width: 980px) {
+  .site-nav {
+    left: 0;
+  }
+
+  #header {
+    top: 50px;
+    height: auto;
+  }
+
+  #main {
+    padding-top: 0;
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 736px) {
+  .site-nav {
+    left: 0;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0 1em;
+  }
+
+  .site-nav .nav-hamburger {
+    display: block;
+  }
+
+  .site-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 0.5em;
+  }
+
+  .site-nav .nav-links.open {
+    display: flex;
+  }
+
+  .site-nav .nav-links li a {
+    padding: 0.7em 0;
+  }
+
+  .site-nav .nav-right {
+    position: absolute;
+    right: 3em;
+    top: 0;
+    height: 50px;
+  }
+
+  #header {
+    top: 50px;
+    height: auto;
+  }
+}

@@ -1,0 +1,90 @@
+/* ============================================
+   theme.css — Color variables for light/dark mode
+   ============================================ */
+
+:root {
+  /* Light mode (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --bg-header: #1f1815;
+  --text-primary: #787878;
+  --text-heading: #787878;
+  --text-muted: #a2a2a2;
+  --text-light: #b2b2b2;
+  --accent: #49bf9d;
+  --accent-hover: #5cc6a7;
+  --accent-active: #3eb08f;
+  --border: #efefef;
+  --input-bg: #f7f7f7;
+  --button-bg: #787878;
+  --button-text: #ffffff;
+  --disabled-bg: #e7e7e7;
+  --disabled-text: #b2b2b2;
+  --icon-border: #efefef;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --nav-bg: #ffffff;
+  --nav-text: #787878;
+  --nav-border: #efefef;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --tag-bg: #f0f0f0;
+  --tag-text: #787878;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-header: #0f0f1a;
+  --text-primary: #c8c8d0;
+  --text-heading: #e0e0e8;
+  --text-muted: #8888a0;
+  --text-light: #686880;
+  --accent: #49bf9d;
+  --accent-hover: #5cc6a7;
+  --accent-active: #3eb08f;
+  --border: #2a2a4a;
+  --input-bg: #16213e;
+  --button-bg: #2a2a4a;
+  --button-text: #e0e0e8;
+  --disabled-bg: #252540;
+  --disabled-text: #585870;
+  --icon-border: #2a2a4a;
+  --card-bg: #16213e;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --nav-bg: #0f0f1a;
+  --nav-text: #c8c8d0;
+  --nav-border: #2a2a4a;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --tag-bg: #2a2a4a;
+  --tag-text: #c8c8d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-header: #0f0f1a;
+    --text-primary: #c8c8d0;
+    --text-heading: #e0e0e8;
+    --text-muted: #8888a0;
+    --text-light: #686880;
+    --accent: #49bf9d;
+    --accent-hover: #5cc6a7;
+    --accent-active: #3eb08f;
+    --border: #2a2a4a;
+    --input-bg: #16213e;
+    --button-bg: #2a2a4a;
+    --button-text: #e0e0e8;
+    --disabled-bg: #252540;
+    --disabled-text: #585870;
+    --icon-border: #2a2a4a;
+    --card-bg: #16213e;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --nav-bg: #0f0f1a;
+    --nav-text: #c8c8d0;
+    --nav-border: #2a2a4a;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --tag-bg: #2a2a4a;
+    --tag-text: #c8c8d0;
+  }
+}

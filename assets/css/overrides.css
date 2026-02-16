@@ -1,0 +1,637 @@
+/* ============================================
+   overrides.css — Variable-based color overrides
+   for main.css + new component styles
+   ============================================ */
+
+/* === Base overrides === */
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+body, input, select, textarea {
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+strong, b {
+  color: var(--text-heading);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
+blockquote {
+  border-left-color: var(--border);
+}
+
+code {
+  background: var(--bg-secondary);
+  border-color: var(--border);
+}
+
+hr {
+  border-bottom-color: var(--border);
+}
+
+/* === Form elements === */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+select,
+textarea {
+  border-color: var(--border);
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+/* === Buttons === */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  border-color: var(--icon-border);
+  color: var(--text-heading);
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.button.primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--button-text) !important;
+}
+
+.button.primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.button.primary:active {
+  background-color: var(--accent-active);
+  border-color: var(--accent-active);
+}
+
+.button.disabled,
+.button:disabled {
+  background-color: var(--disabled-bg) !important;
+  border-color: var(--disabled-bg) !important;
+  color: var(--disabled-text) !important;
+}
+
+/* === Tables === */
+
+table tbody tr {
+  border-color: var(--border);
+}
+
+table tbody tr:nth-child(2n+1) {
+  background-color: var(--bg-secondary);
+}
+
+table th {
+  color: var(--text-heading);
+}
+
+table tfoot {
+  border-color: var(--border);
+}
+
+/* === Header (sidebar) === */
+
+#header {
+  background-color: var(--bg-header);
+  transition: background-color 0.3s;
+}
+
+#header h1 {
+  color: #ffffff;
+}
+
+/* === Icons === */
+
+ul.icons li a {
+  border-color: var(--icon-border);
+  color: var(--text-heading);
+}
+
+ul.icons li a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+ul.labeled-icons li h3 {
+  color: var(--text-heading);
+}
+
+/* === Footer === */
+
+#footer .copyright li {
+  border-left-color: var(--border);
+  color: var(--text-light);
+}
+
+/* === Main content area === */
+
+#main {
+  background: var(--bg-primary);
+}
+
+/* === Card-based layouts (no-sidebar pages) === */
+
+body.no-sidebar {
+  background: var(--bg-primary);
+}
+
+body.no-sidebar #main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+body.no-sidebar #header {
+  display: none;
+}
+
+body.no-sidebar #footer {
+  background: var(--bg-primary);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+body.no-sidebar #footer .inner {
+  max-width: 100%;
+}
+
+/* ============================================
+   Publications page styles
+   ============================================ */
+
+.pub-entry {
+  display: flex;
+  gap: 1.5em;
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-entry:last-child {
+  border-bottom: none;
+}
+
+.pub-thumb {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.pub-thumb img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.pub-details {
+  flex: 1;
+}
+
+.pub-details h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.pub-meta {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+.pub-meta i {
+  width: 1.2em;
+  margin-right: 0.3em;
+  color: var(--accent);
+}
+
+.pub-links {
+  margin-top: 0.8em;
+  display: flex;
+  gap: 0.8em;
+  flex-wrap: wrap;
+}
+
+.pub-links a {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  font-size: 0.8em;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-heading);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.pub-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media screen and (max-width: 736px) {
+  .pub-entry {
+    flex-direction: column;
+  }
+  .pub-thumb {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ============================================
+   Portfolio grid (cartography index)
+   ============================================ */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+.portfolio-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 4px 16px var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.portfolio-card .card-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-secondary);
+}
+
+.portfolio-card .card-body {
+  padding: 1em;
+}
+
+.portfolio-card .card-body h3 {
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
+
+.portfolio-card .card-body p {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.portfolio-card .card-tags {
+  padding: 0.5em 1em 1em;
+  display: flex;
+  gap: 0.4em;
+  flex-wrap: wrap;
+}
+
+.portfolio-card .card-tags span {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  font-size: 0.75em;
+}
+
+/* ============================================
+   Project detail pages
+   ============================================ */
+
+.project-header {
+  margin-bottom: 2em;
+}
+
+.project-header h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.project-meta {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+.project-meta span {
+  margin-right: 1.5em;
+}
+
+.project-meta i {
+  margin-right: 0.3em;
+  color: var(--accent);
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 0.8em;
+}
+
+.project-tags span {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.2em 0.7em;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+/* Map container */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+.map-container #map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container .map-console {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 240px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 6px;
+  z-index: 1;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+[data-theme="dark"] .map-container .map-console {
+  background: rgba(26, 26, 46, 0.95);
+  color: var(--text-primary);
+}
+
+.map-container .map-console h2 {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  color: inherit;
+}
+
+.map-container .map-console .session {
+  margin-bottom: 10px;
+}
+
+.map-container .map-console .row {
+  height: 12px;
+  width: 100%;
+}
+
+.map-container .map-console .colors {
+  background: linear-gradient(to right, #f1f075, #e55e5e);
+  margin-bottom: 5px;
+}
+
+.map-container .map-console .label {
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+  font-size: 11px;
+}
+
+.map-container .map-console #pitch-btn {
+  background-color: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.map-container .map-console #pitch-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Fullscreen toggle */
+.map-fullscreen-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--text-heading);
+  transition: background 0.2s;
+}
+
+.map-fullscreen-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.map-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20000;
+  border: none;
+  border-radius: 0;
+}
+
+/* Project image display */
+.project-image {
+  margin: 1.5em 0;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.project-image figcaption {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+/* Previous/Next navigation */
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--border);
+}
+
+.project-nav a {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.project-nav a:hover {
+  color: var(--accent);
+}
+
+.project-nav a i {
+  margin: 0 0.3em;
+}
+
+/* ============================================
+   Contact page
+   ============================================ */
+
+.contact-social {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+
+.contact-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.contact-social a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.2em;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.4em;
+  font-size: 0.9em;
+  color: var(--text-heading);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* ============================================
+   Page title headers (for inner pages)
+   ============================================ */
+
+.page-title {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-title h1 {
+  font-size: 2em;
+  margin-bottom: 0.2em;
+}
+
+.page-title p {
+  color: var(--text-muted);
+  font-size: 1em;
+}
+
+/* ============================================
+   Responsive adjustments for no-sidebar pages
+   ============================================ */
+
+@media screen and (max-width: 736px) {
+  body.no-sidebar #main {
+    padding: 1em;
+  }
+
+  .map-container {
+    height: 50vh;
+  }
+
+  .map-container .map-console {
+    width: 180px;
+    padding: 8px 12px;
+  }
+}

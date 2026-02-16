@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact - Jeremy Allen</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/overrides.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favico.ico">
+    <script src="assets/js/theme-toggle.js"></script>
+  </head>
+  <body class="is-preload no-sidebar">
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cartography/index.html">Cartography</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-hamburger" onclick="this.parentElement.previousElementSibling.classList.toggle('open')" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <div class="page-title">
+        <h1>Contact</h1>
+        <p>Get in touch for research collaboration or contract work</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="contact-social">
+        <a href="https://x.com/Jeremallen" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i> X / Twitter
+        </a>
+        <a href="https://bsky.app/profile/jeremallen.bsky.social" target="_blank" rel="noopener">
+          <i class="fas fa-cloud"></i> Bluesky
+        </a>
+        <a href="https://github.com/jmrallen" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/jeremy-a-6918aa1a9/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- Contact Form -->
+      <h2>Send a Message</h2>
+      <form class="contact-form" action="https://formspree.io/f/mnjbdkjy" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <ul class="actions">
+          <li><input type="submit" value="Send Message" class="button primary" /></li>
+        </ul>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a href="https://x.com/Jeremallen" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="https://github.com/jmrallen" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="https://www.linkedin.com/in/jeremy-a-6918aa1a9/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          <li><a href="https://bsky.app/profile/jeremallen.bsky.social" class="icon fas fa-cloud"><span class="label">Bluesky</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Jeremy Allen</li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
