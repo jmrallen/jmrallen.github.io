@@ -1,0 +1,228 @@
+/* ============================================
+   cv.css — CV page styles + print stylesheet
+   ============================================ */
+
+/* === CV Header === */
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.cv-header h1 {
+  font-size: 2em;
+  margin-bottom: 0.1em;
+}
+
+.cv-header .cv-affiliation {
+  color: var(--text-muted);
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+
+.cv-header .cv-location {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* === Download button === */
+
+.cv-download {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* === CV Sections === */
+
+.cv-section {
+  margin-bottom: 2em;
+}
+
+.cv-section h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+/* === CV Entries === */
+
+.cv-entry {
+  margin-bottom: 1.4em;
+}
+
+.cv-entry-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.1em;
+  line-height: 1.4;
+}
+
+.cv-entry-meta {
+  color: var(--text-primary);
+  font-size: 0.95em;
+  margin-bottom: 0.1em;
+}
+
+.cv-entry-desc {
+  color: var(--text-primary);
+  font-size: 0.9em;
+  margin-bottom: 0.1em;
+  padding-left: 0.5em;
+}
+
+.cv-entry-desc ul {
+  margin: 0.2em 0 0 1em;
+  padding: 0;
+}
+
+.cv-entry-desc ul li {
+  font-size: 1em;
+  margin-bottom: 0.15em;
+}
+
+.cv-entry-date {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+/* === Entry with date floated right === */
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.cv-entry-header .cv-entry-date {
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* === Skills tags === */
+
+.cv-skills {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+.cv-skills span {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.25em 0.75em;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* === Languages === */
+
+.cv-language {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.3em 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-language:last-child {
+  border-bottom: none;
+}
+
+.cv-language-name {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.cv-language-level {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* ============================================
+   Print stylesheet
+   ============================================ */
+
+@media print {
+  /* Hide non-content elements */
+  .site-nav,
+  #footer,
+  .cv-download,
+  .theme-toggle,
+  .nav-hamburger {
+    display: none !important;
+  }
+
+  /* Reset colors for print */
+  body, body.no-sidebar {
+    background: #fff !important;
+    color: #333 !important;
+  }
+
+  body.no-sidebar #main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  * {
+    color: #333 !important;
+    border-color: #ccc !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .cv-header h1 {
+    font-size: 1.6em;
+    color: #000 !important;
+  }
+
+  .cv-entry-title {
+    color: #000 !important;
+  }
+
+  .cv-section h2 {
+    color: #000 !important;
+    font-size: 1.15em;
+  }
+
+  .cv-entry-date {
+    color: #666 !important;
+  }
+
+  .cv-skills span {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+    border: 1px solid #ccc;
+  }
+
+  /* Compact spacing */
+  .cv-section {
+    margin-bottom: 1em;
+  }
+
+  .cv-entry {
+    margin-bottom: 0.8em;
+  }
+
+  /* Page break control */
+  .cv-section {
+    break-inside: avoid;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+  }
+
+  /* Margins for A4/Letter */
+  @page {
+    margin: 1.5cm 2cm;
+  }
+}

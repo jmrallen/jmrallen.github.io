@@ -1,0 +1,51 @@
+# Website Manager Memory — jmrallen.github.io
+
+## Site Overview
+Static personal portfolio/academic website for Jeremy Allen (PhD student, UBC).
+Hosted on GitHub Pages. No build process — pure HTML/CSS/JS.
+
+## File Structure
+- `index.html` — home page (Strata template, has sidebar/header with profile photo)
+- `publications.html` — publications listing (no-sidebar layout)
+- `contact.html` — contact page with Formspree form (no-sidebar layout)
+- `cartography/index.html` — portfolio grid of map projects
+- `cartography/afghanistan-tajikistan/index.html` — interactive Mapbox map
+- `cartography/ghana-crema/index.html` — static map display
+- `cartography/panjshir-offensives/index.html` — research poster display
+- `projects/storytelling/` — untracked Mapbox scrollytelling subproject (boilerplate config, not yet integrated)
+- `projects/afghanistan-tajikistan-timeline.html` — legacy standalone map (old, pre-refactor)
+
+## CSS Architecture
+- `assets/css/main.css` — Strata template base styles (do not edit)
+- `assets/css/theme.css` — CSS custom properties for light/dark mode
+- `assets/css/nav.css` — top navigation bar styles
+- `assets/css/overrides.css` — all custom component styles (pub-entry, portfolio-card, project-*, contact-*, etc.)
+- `assets/js/theme-toggle.js` — dark/light mode toggle with localStorage
+
+## Layout Patterns
+- Home page uses Strata sidebar (`#header` fixed left, `#main` offset right)
+- Inner pages use `body.no-sidebar` class — sidebar hidden, `#main` centered max-width 960px
+- Nav bar is fixed top, spans right of sidebar on home, full width on inner pages
+- Breakpoints: 1280px (sidebar 20%), 980px (sidebar collapses), 736px (mobile)
+
+## Key Conventions
+- All pages share the same 4-item nav: Home, Publications, Cartography, Contact
+- Active nav link gets `class="active"`
+- Inner pages use relative paths back to root: `../../assets/...`
+- Footer social icons: Twitter (x.com/Jeremallen), GitHub (jmrallen), LinkedIn
+- Accent color: `#49bf9d` (teal-green)
+- Dark mode: deep navy/indigo (`#1a1a2e` bg, `#0f0f1a` nav)
+
+## Known Issues (as of 2026-02-16)
+- Thumbnail images (`ghana-crema-thumb.jpg`, `panjshir-offensives-thumb.jpg`) are ~3.3MB each — very large
+- Full project images in `/images/` are 15-43MB each — extremely large, not web-optimized
+- 6 untracked images in `/images/` with no clear purpose yet
+- `projects/storytelling/` is untracked and uses boilerplate placeholder config (not a real story)
+- `projects/afghanistan-tajikistan-timeline.html` is a legacy file, superseded by cartography project page
+- `images/thumbs/test` is an empty file (should be cleaned up)
+- `images/thumbs/01.jpg`-`06.jpg` are generic placeholder thumbnails (3-4KB, very small/low quality)
+- The Mapbox token in map-init.js references old username `ioromieh` — may need updating
+- GeoJSON data still loads from old GitHub raw URL (`ioromieh/ioromieh.github.io`)
+
+## See Also
+- `site-structure.md` for detailed notes
