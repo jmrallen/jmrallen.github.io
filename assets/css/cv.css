@@ -55,20 +55,20 @@
   font-size: 1.05em;
   font-weight: 600;
   color: var(--text-heading);
-  margin-bottom: 0.1em;
+  margin-bottom: 0;
   line-height: 1.4;
 }
 
 .cv-entry-meta {
   color: var(--text-primary);
   font-size: 0.95em;
-  margin-bottom: 0.1em;
+  margin-bottom: 0;
 }
 
 .cv-entry-desc {
   color: var(--text-primary);
   font-size: 0.9em;
-  margin-bottom: 0.1em;
+  margin-bottom: 0;
   padding-left: 0.5em;
 }
 

@@ -36,6 +36,45 @@ You are a web development agent responsible for building and maintaining this we
 - **Local dev**: Open `index.html` in a browser or use VS Code Live Server.
 - **Deploy**: Push to `main` branch; GitHub Pages serves automatically.
 
+## CV Update Protocol
+
+When I ask you to update my CV:
+
+### Step 1: Ask Clarifying Questions
+Before making any changes, ask about:
+- What information am I adding? (publication, teaching, award, etc.)
+- Do I have all required details?
+  - For publications: Title, authors, venue, year, DOI/URL, PDF link, project page?
+  - For teaching: Course name, role, term, institution?
+  - For awards: Name, amount (if applicable), granting organization, year?
+  - For experience: Position, institution, dates, description?
+- Where should this appear in the CV? (chronological order, which section?)
+- Any special formatting or notes needed?
+
+### Step 2: Update Both Versions
+After I provide the information:
+1. Update cv.html (the web version) with the new content
+2. Update cv.tex (LaTeX version) with identical information
+3. Ensure formatting is consistent between both versions
+4. Keep chronological order (most recent first, typically)
+
+### Step 3: Commit and Push
+- Commit both cv.html and cv.tex with a descriptive message like:
+  "Add [publication/award/teaching] to CV: [brief description]"
+- Push to GitHub to trigger automatic PDF compilation
+
+### Step 4: Verify
+- Confirm that both files were updated
+- Note that the PDF will compile automatically via GitHub Actions
+- Remind me to check the website in a few minutes to verify the PDF updated
+
+## CV Consistency Rules
+- Always update BOTH cv.html and cv.tex together
+- Keep the same order and content in both versions
+- Use consistent date formats (e.g., "September 2024" or "Fall 2024")
+- Include all relevant links in HTML version
+- Ensure LaTeX version compiles without errors
+
 ## Architecture
 
 ### Main Site (`/`)
