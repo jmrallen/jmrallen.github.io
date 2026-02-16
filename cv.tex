@@ -1,0 +1,290 @@
+% ============================================================
+%  Jeremy M. Allen — Curriculum Vitae
+%  Compiled automatically via GitHub Actions
+% ============================================================
+\documentclass[11pt, letterpaper]{article}
+
+% --- Packages -----------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% --- Hyperlink styling --------------------------------------
+\definecolor{accent}{HTML}{49bf9d}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = accent,
+  linkcolor  = accent,
+}
+
+% --- Section heading style ----------------------------------
+\titleformat{\section}
+  {\large\bfseries\scshape}
+  {}{0em}
+  {}
+  [\titlerule\vspace{2pt}]
+
+\titlespacing{\section}{0pt}{14pt}{6pt}
+
+% --- Custom entry commands ----------------------------------
+% \cventry{Title}{Date}{Meta (org/location)}{Description}
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textit{\small #2}
+  \end{tabularx}%
+  \ifx&#3&\else\par\vspace{1pt}{\small\textit{#3}}\fi%
+  \ifx&#4&\else\par\vspace{2pt}{\small #4}\fi%
+  \vspace{6pt}%
+}
+
+% ============================================================
+\begin{document}
+
+% --- Header -------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries Jeremy M. Allen}\\[4pt]
+  University of British Columbia \textbar{} Faculty of Forestry\\
+  Vancouver, B.C.\\[4pt]
+  \href{https://jmrallen.github.io}{jmrallen.github.io}
+\end{center}
+
+\vspace{4pt}
+
+% ============================================================
+\section{Education}
+
+\cventry{Doctor of Philosophy (Ph.D.), University of British Columbia}
+        {2023 -- present}
+        {Faculty of Forestry, Department of Forest and Conservation Sciences}
+        {Remote Sensing \& GIS. Thesis: \textit{Environmental Dimensions of Armed Conflict: Drivers, Impacts, Recovery}}
+
+\cventry{Master of Geomatics (MGEM), University of British Columbia}
+        {2021 -- 2022}
+        {Faculty of Forestry, Department of Forest Resource Management}
+        {Remote Sensing \& GIS. Thesis: \textit{Nature of War: The Political Ecology of the 2020 Nagorno-Karabakh Conflict}}
+
+\cventry{Master of Arts (M.A.), University of Toronto}
+        {2020 -- 2021}
+        {School of Graduate Studies, Department of Near and Middle Eastern Studies}
+        {Geography. Thesis: \textit{Environmental Science in the Turkish Republican Period}}
+
+\cventry{Bachelor of Arts (B.A.~Hons.), McGill University}
+        {2017 -- 2020}
+        {Faculty of Arts, Major in History \& Philosophy, Minor in Persian}
+        {Thesis: \textit{Qa\d{h}\d{t}y-e Bozorg 1288 Qamar\={i}: The Political Ecology of Famine in Nineteenth Century Iran}\\
+         Dean's Honour List --- awarded for being in the top 10\% of the faculty}
+
+% ============================================================
+\section{Employment \& Work Experience}
+
+\cventry{Graduate Teaching Assistant (GTA II)}
+        {Winter 2025}
+        {University of British Columbia, Faculty of Land and Food Systems}
+        {Teaching assistant for FRE 490 -- Spatial Data Science}
+
+\cventry{Graduate Teaching Assistant (GTA II)}
+        {Summer 2024}
+        {University of British Columbia, Faculty of Forestry}
+        {Led lab sessions for UFOR 511 -- Geomatics Principles and Applications}
+
+\cventry{Graduate Teaching Assistant (GTA II)}
+        {Fall 2023}
+        {University of British Columbia, Faculty of Forestry}
+        {Led lab sessions for BEST 308 -- Land Use Management and Planning}
+
+\cventry{Graduate Research Assistant (GRA)}
+        {Summer 2023}
+        {University of British Columbia, Faculty of Forestry}
+        {\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+           \item Updated GEM 521 -- Advanced Earth Observation and Image Processing
+           \item Updated the workflow of the spectral angle mapper tool in ENVI
+           \item Updated lab data to include new hyperspectral imagery from the EnMAP satellite mission
+         \end{itemize}}
+
+\cventry{Teaching Assistant (GTA II)}
+        {Winter 2023}
+        {University of British Columbia, Faculty of Forestry}
+        {Led lab tutorials for GEM 511 -- Advanced Geographic Information Systems for Environmental Management, a graduate-level GIS course focusing on geographically weighted regression, machine learning, and network analysis}
+
+\cventry{Visiting Instructor \& Researcher}
+        {2022 -- 2023}
+        {University of Central Asia, Khorog Campus}
+        {\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+           \item Taught EAES 3721 -- Applications in GIS and Remote Sensing, focusing on using R to analyse 2D and 3D geospatial data
+           \item Assisted with MSRI fieldwork and field trips, including gathering ice samples from Pik Karl Marx glacier and leading field trips to Barsem and Wakhan
+           \item Participated in a HEC-RAS/HMS workshop hosted by AKAH
+         \end{itemize}}
+
+\cventry{Geospatial and Data Visualization Specialist}
+        {2021 -- present}
+        {Canadian Friends of Sabeel (CFOS) \textbar{} Contract}
+        {\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+           \item Built an animation of United Nations General Assembly voting records over the past 20 years using QGIS and R
+           \item Video editing in Adobe Premiere Pro
+         \end{itemize}}
+
+\cventry{Research Assistant}
+        {2020 -- 2021}
+        {Iranica Project \textbar{} University of Toronto \& Encyclop\ae{}dia Iranica}
+        {\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+           \item Compiled two new specialized encyclopedias as part of the Toronto Initiative for Iranian Studies, under the auspices of the Encyclop\ae{}dia Iranica Foundation
+           \item Reference management
+         \end{itemize}}
+
+\cventry{GIS Specialist \& Map Curator}
+        {2020 -- 2021}
+        {1947 Partition Archive \textbar{} Internship}
+        {Worked with the archivist and GIS/tag verifying teams to ensure the quality of the archive website's story map; wrote an R script that automated the georeferencing of locations}
+
+\cventry{Research Assistant}
+        {2019 -- 2020}
+        {McGill University, Institute of Islamic Studies}
+        {Worked with Dr.~Asl\i{}han G\"{u}rb\"{u}zel, compiling primary source material related to tobacco, coffee, and medicine in the early modern Ottoman Empire}
+
+\cventry{Swimming Instructor}
+        {2015 -- 2020}
+        {City of Pointe-Claire, Quebec}
+        {Swimming instructor for children with physical and mental disabilities}
+
+% ============================================================
+\section{Conferences \& Publications}
+
+\cventry{The Workshop in Environmental Economics and Data Science (TWEEDS)}
+        {April 2025}
+        {Portland, Oregon \textbar{} Speaker}
+        {\textit{Declassified KEYHOLE Imagery: The Origins of Earth Observation}}
+
+\cventry{Food and Resource Economics Seminar, UBC}
+        {April 2025}
+        {Vancouver, Canada \textbar{} Speaker}
+        {\textit{Socioeconomic Change and Land Use: Evidence from Tajikistan}}
+
+\cventry{Global Land Programme Open Science Meeting (OSM 5)}
+        {November 2024}
+        {Oaxaca, Mexico \textbar{} Speaker}
+        {\textit{Conflict Dynamics and Land Use: Mechanisms of Conflict Disturbance in Transboundary Central Asia}}
+
+\cventry{European Geosciences Union (EGU) General Assembly}
+        {April 2024}
+        {Vienna, Austria \textbar{} Speaker}
+        {\textit{Detecting Disturbance to Agricultural Productivity from Historical Armed Conflict in Afghanistan: The Panjshir Offensives, 1980--1985}}
+
+\cventry{International Association for Landscape Ecology (IALE)}
+        {July 2023}
+        {Nairobi, Kenya \textbar{} Speaker}
+        {\textit{Assessing the Impact of Conflict on Local Food Production in Badakhshan: 1967--2013}}
+
+\cventry{MEICON Conference}
+        {April 2022}
+        {University of British Columbia \textbar{} Speaker}
+        {\textit{Nature of War: The Political Ecology of the 2020 Nagorno-Karabakh Conflict}}
+
+\cventry{Indian Ocean World Centre, McGill University}
+        {May 2021}
+        {Montreal, Canada \textbar{} Speaker}
+        {\textit{Environmental Crises in the Indian Ocean World since 1800}}
+
+% ============================================================
+\section{Awards \& Funding}
+
+\cventry{MFRE Graduate Research Award}
+        {Spring 2025}
+        {}
+        {Funding to support doctoral research in the field of food and resource economics (CAD \$10,000)}
+
+\cventry{Mary and David Macaree Fellowship}
+        {Winter 2024}
+        {}
+        {Funding to support doctoral research on sustainability of agriculture and forest ecosystems (CAD \$1,750)}
+
+\cventry{IDRC International Doctoral Research Awards (IDRA)}
+        {Fall 2023}
+        {}
+        {Funding to support doctoral fieldwork in Tajikistan (CAD \$16,590)}
+
+\cventry{Mary and David Macaree Fellowship}
+        {Fall 2023}
+        {}
+        {Funding to support doctoral research on sustainability of agriculture and forest ecosystems (CAD \$2,800)}
+
+\cventry{Four Year Fellowship, University of British Columbia}
+        {Winter 2023}
+        {}
+        {Funding to support doctoral research (4 $\times$ CAD \$18,000 + tuition)}
+
+\cventry{SELECT Funding Grant}
+        {Spring 2021}
+        {}
+        {Faculty of Arts and Science, University of Toronto (CAD \$2,500)}
+
+\cventry{Dean's Special Undergraduate Travel Fund Award}
+        {Summer 2019}
+        {}
+        {McGill University (CAD \$2,500)}
+
+\cventry{Intensive Persian Language Summer Course}
+        {Summers 2018 \& 2019}
+        {}
+        {International Centre for Persian Studies (ICPS), University of Tehran}
+
+\cventry{Th\'{e}r\`{e}se Casgrain Foundation Award}
+        {Spring 2015}
+        {}
+        {For advancing Th\'{e}r\`{e}se Casgrain's heritage through community service (CAD \$1,000)}
+
+% ============================================================
+\section{Volunteering \& Service}
+
+\cventry{Graduate Student Representative}
+        {2023 -- present}
+        {Department of Forest \& Conservation Sciences}
+        {}
+
+\cventry{Council Member}
+        {2023 -- present}
+        {UBC Forestry Graduate Student Association}
+        {}
+
+\cventry{Volunteer}
+        {Summer 2023}
+        {UBC Farm}
+        {}
+
+\cventry{Persian (Farsi) Translator}
+        {2022 -- present}
+        {Downtown Eastside Neighbourhood House}
+        {}
+
+\cventry{V.P.\ Events}
+        {2018 -- 2020}
+        {McGill World Islamic \& Middle East Studies Students' Association}
+        {}
+
+\cventry{Staff Writer --- Iran \& the Caucasus}
+        {2018 -- 2019}
+        {McGill International Review}
+        {}
+
+% ============================================================
+\section{Languages}
+
+\begin{tabular}{@{}ll}
+  \textbf{French}                    & Fluent \\[2pt]
+  \textbf{Persian (Farsi, Tajiki)}   & Advanced Farsi, working knowledge of Tajik \\[2pt]
+  \textbf{Arabic (MSA)}              & Beginner \\
+\end{tabular}
+
+% ============================================================
+\section{Skills \& Technology}
+
+R \textbullet{} Python \textbullet{} JavaScript (Mapbox GL JS, GEE) \textbullet{} ArcGIS Pro \textbullet{} QGIS \textbullet{} ENVI \textbullet{} eCognition \textbullet{} Blender
+
+\end{document}

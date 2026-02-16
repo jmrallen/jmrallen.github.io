@@ -1,0 +1,36 @@
+name: Compile LaTeX CV
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'cv.tex'
+
+jobs:
+  compile-cv:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile cv.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          latexmk_use_xelatex: false
+          latexmk_use_lualatex: false
+
+      - name: Move compiled PDF to assets/
+        run: mv cv.pdf assets/cv.pdf
+
+      - name: Commit and push PDF
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/cv.pdf
+          git diff --cached --quiet || git commit -m "ci: recompile CV PDF from cv.tex [skip ci]"
+          git push
