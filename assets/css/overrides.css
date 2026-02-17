@@ -748,10 +748,13 @@ body.no-sidebar #footer .inner {
 
 .subset-grid figure {
   margin: 0;
+  min-width: 0;
 }
 
-.subset-grid img {
+.subset-grid figure img {
   width: 100%;
+  height: auto;
+  display: block;
   border-radius: 6px;
   border: 1px solid var(--border);
 }
