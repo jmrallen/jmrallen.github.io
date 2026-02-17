@@ -79,10 +79,28 @@ After I provide the information:
 
 ### Main Site (`/`)
 - `index.html` — portfolio page (Strata template)
+- `publications.html` — publications/conference abstracts page
+- `cv.html` — HTML version of CV (master reference, keep in sync with cv.tex)
+- `cv.tex` — LaTeX version of CV (compiled to PDF via GitHub Actions)
+- `contact.html` — contact form (Formspree) and social links
 - `index.js` — scroll-triggered header animation
 - `index.css` — custom overrides
 - `assets/js/main.js` — jQuery-based responsive layout (breakpoints, parallax, poptrox lightbox)
 - `assets/css/main.css` — primary stylesheet (generated from `assets/sass/`)
+- `assets/css/theme.css` — CSS variables for light/dark mode
+- `assets/css/nav.css` — shared navigation bar styles
+- `assets/css/overrides.css` — variable-based color overrides + component styles (publications, portfolio grid, project pages, contact form)
+- `assets/css/cv.css` — CV page styles + `@media print` rules
+- `assets/cv.pdf` — compiled CV PDF (auto-generated, do not edit manually)
+
+### Cartography (`/cartography/`)
+- `cartography/index.html` — portfolio grid of cartography projects
+- `cartography/ghana-crema/index.html` — Ghana CREMA map project page
+- `cartography/panjshir-offensives/index.html` — Panjshir Offensives project page
+- `cartography/afghanistan-tajikistan/index.html` — Afghanistan-Tajikistan interactive JS map
+
+### GitHub Actions
+- `.github/workflows/compile-cv.yml` — compiles cv.tex to assets/cv.pdf on push
 
 ### Mapbox Storytelling (`/projects/storytelling/`)
 A configuration-driven scrollytelling template using Mapbox GL JS and Scrollama.js.
@@ -95,8 +113,19 @@ A configuration-driven scrollytelling template using Mapbox GL JS and Scrollama.
 - `assets/UCDP_filtered2.geojson` — conflict event data (Afghanistan/Tajikistan, 1989-2021)
 - `assets/Meteorite_Landings.csv` — meteorite impact dataset
 
+### Navigation
+All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 8 pages:
+- Root: `index.html`, `publications.html`, `cv.html`, `contact.html`
+- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`
+- Adjust relative paths for subdirectory pages (`../` for cartography/, `../../` for cartography/*/`)
+
+### Thumbnail Images
+Project thumbnails are referenced in two places:
+- `index.html` — "Recent Work" grid on the home page
+- `cartography/index.html` — portfolio card grid on the Cartography index page
+
 ## Key Dependencies (loaded via CDN/local)
 - jQuery + poptrox (lightbox gallery)
-- Mapbox GL JS v2.11.0
+- Mapbox GL JS v2.13.0
 - Scrollama.js
 - Font Awesome
