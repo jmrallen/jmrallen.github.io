@@ -98,6 +98,7 @@ After I provide the information:
 - `cartography/ghana-crema/index.html` — Ghana CREMA map project page
 - `cartography/panjshir-offensives/index.html` — Panjshir Offensives project page
 - `cartography/afghanistan-tajikistan/index.html` — Afghanistan-Tajikistan interactive JS map
+- `cartography/central-asia-s2/index.html` — Central Asia Sentinel-2 mosaic project page (includes Prism.js for code highlighting)
 
 ### GitHub Actions
 - `.github/workflows/compile-cv.yml` — compiles cv.tex to assets/cv.pdf on push
@@ -114,12 +115,14 @@ A configuration-driven scrollytelling template using Mapbox GL JS and Scrollama.
 - `assets/Meteorite_Landings.csv` — meteorite impact dataset
 
 ### Navigation
-All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 8 pages:
+All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 9 pages:
 - Root: `index.html`, `publications.html`, `cv.html`, `contact.html`
-- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`
+- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`
 - Adjust relative paths for subdirectory pages (`../` for cartography/, `../../` for cartography/*/`)
 
-### Thumbnail Images
+### Images
+All images live in `/images/` (full-size) and `/images/thumbs/` (thumbnails). Project pages in subdirectories must use relative paths back to the root images folder (e.g., `../../images/` from `cartography/*/`). Never store project images alongside the HTML in the project subdirectory.
+
 Project thumbnails are referenced in two places:
 - `index.html` — "Recent Work" grid on the home page
 - `cartography/index.html` — portfolio card grid on the Cartography index page
@@ -129,3 +132,4 @@ Project thumbnails are referenced in two places:
 - Mapbox GL JS v2.13.0
 - Scrollama.js
 - Font Awesome
+- Prism.js 1.29.0 (code syntax highlighting, CDN, used on central-asia-s2 page only)
