@@ -270,14 +270,32 @@ body.no-sidebar #footer .inner {
   color: var(--accent);
 }
 
-@media screen and (max-width: 736px) {
-  .pub-entry {
-    flex-direction: column;
-  }
-  .pub-thumb {
-    width: 100%;
-    max-width: 300px;
-  }
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+.pub-grid .pub-entry {
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1em;
+}
+
+.pub-grid .pub-entry:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-grid .pub-thumb {
+  width: 100%;
+  max-width: 100%;
+}
+
+.pub-grid .pub-details {
+  padding-top: 0.75em;
 }
 
 /* ============================================
@@ -343,6 +361,21 @@ body.no-sidebar #footer .inner {
   padding: 0.15em 0.5em;
   border-radius: 3px;
   font-size: 0.75em;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75em;
+  }
+
+  .portfolio-card .card-body {
+    padding: 0.6em;
+  }
+
+  .portfolio-card .card-tags {
+    padding: 0.3em 0.6em 0.6em;
+  }
 }
 
 /* ============================================
@@ -781,7 +814,8 @@ body.no-sidebar #footer .inner {
     padding: 2em 1.5em 1.5em;
   }
 
-  #header h1,
+  #header .inner h1,
+  #header .inner h1 strong,
   #header p {
     color: var(--text-primary);
   }
