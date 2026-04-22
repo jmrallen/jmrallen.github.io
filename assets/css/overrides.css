@@ -766,9 +766,53 @@ body.no-sidebar #footer .inner {
   text-align: center;
 }
 
-@media screen and (max-width: 480px) {
-  .subset-grid {
-    grid-template-columns: 1fr;
+
+/* ============================================
+   Mobile header redesign
+   ============================================ */
+
+.header-social {
+  display: none;
+}
+
+@media screen and (max-width: 736px) {
+  #header {
+    background-color: var(--bg-primary);
+    padding: 2em 1.5em 1.5em;
+  }
+
+  #header h1,
+  #header p {
+    color: var(--text-primary);
+  }
+
+  #header .image.avatar img {
+    width: 7em;
+  }
+
+  .header-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+    margin-top: 1em;
+  }
+
+  .header-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.4em 0.9em;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.82em;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .header-social a:hover {
+    background-color: var(--border);
   }
 }
 
