@@ -173,10 +173,9 @@ body.no-sidebar #main {
   }
 
   .site-nav .nav-right {
-    position: absolute;
-    right: 0;
-    top: 0;
     height: 50px;
+    order: -1;
+    margin-left: auto;
   }
 
   #header {
