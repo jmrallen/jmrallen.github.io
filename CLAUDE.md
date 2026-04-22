@@ -120,6 +120,22 @@ All pages share the same nav bar: Home | Publications | Cartography | CV | Conta
 - Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`
 - Adjust relative paths for subdirectory pages (`../` for cartography/, `../../` for cartography/*/`)
 
+### SEO Requirements
+Every new HTML page must include the following inside `<head>`:
+1. `<html lang="en">` on the opening tag
+2. `<meta name="description" content="...">` — a unique, page-specific description (1–2 sentences)
+3. `<link rel="canonical" href="...">` — must match the page's actual public URL exactly
+4. Open Graph tags (at minimum): `og:type`, `og:url`, `og:title`, `og:description`
+
+Canonical URL conventions:
+- Root pages use the full URL with filename: `https://jmrallen.github.io/publications.html`
+- The home page uses the trailing-slash form: `https://jmrallen.github.io/`
+- Cartography project pages use the directory form (trailing slash, no `index.html`): `https://jmrallen.github.io/cartography/ghana-crema/`
+
+Sitemap maintenance:
+- `sitemap.xml` at the site root must be updated whenever a new page is added or an existing page is removed
+- Use the same canonical URL form in `sitemap.xml` as in the page's `<link rel="canonical">` tag
+
 ### Images
 All images live in `/images/` (full-size) and `/images/thumbs/` (thumbnails). Project pages in subdirectories must use relative paths back to the root images folder (e.g., `../../images/` from `cartography/*/`). Never store project images alongside the HTML in the project subdirectory.
 
