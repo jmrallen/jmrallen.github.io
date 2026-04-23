@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static personal portfolio/academic website for Jeremy Allen (PhD student, UBC), hosted on GitHub Pages. Built on the HTML5 UP "Strata" template with an integrated Mapbox storytelling subproject.
+Static personal portfolio/academic website for Jeremy Allen (PhD candidate, UBC), hosted on GitHub Pages. Built on the HTML5 UP "Strata" template with an integrated Mapbox storytelling subproject.
 
 ## Your Role
 You are a web development agent responsible for building and maintaining this website.
@@ -83,8 +83,7 @@ After I provide the information:
 - `cv.html` — HTML version of CV (master reference, keep in sync with cv.tex)
 - `cv.tex` — LaTeX version of CV (compiled to PDF via GitHub Actions)
 - `contact.html` — contact form (Formspree) and social links
-- `index.js` — scroll-triggered header animation
-- `index.css` — custom overrides
+- `favicon.ico` — site favicon (multi-resolution ICO; all pages reference this filename)
 - `assets/js/main.js` — jQuery-based responsive layout (breakpoints, parallax, poptrox lightbox)
 - `assets/css/main.css` — primary stylesheet (generated from `assets/sass/`)
 - `assets/css/theme.css` — CSS variables for light/dark mode
@@ -115,9 +114,9 @@ A configuration-driven scrollytelling template using Mapbox GL JS and Scrollama.
 - `assets/Meteorite_Landings.csv` — meteorite impact dataset
 
 ### Navigation
-All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 9 pages:
+All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 10 pages:
 - Root: `index.html`, `publications.html`, `cv.html`, `contact.html`
-- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`
+- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`, `cartography/wakhan/index.html`
 - Adjust relative paths for subdirectory pages (`../` for cartography/, `../../` for cartography/*/`)
 
 ### SEO Requirements
