@@ -29,7 +29,23 @@
 
 .cv-download {
   text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.cv-download-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85em;
   margin-bottom: 2em;
+}
+
+/* === Profile === */
+
+.cv-profile {
+  color: var(--text-primary);
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-top: 0.5em;
 }
 
 /* === CV Sections === */
@@ -105,6 +121,21 @@
 
 /* === Skills tags === */
 
+.cv-skill-group {
+  margin-bottom: 1em;
+}
+
+.cv-skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.cv-skill-group h3 {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.2em;
+}
+
 .cv-skills {
   display: flex;
   gap: 0.5em;
@@ -153,6 +184,7 @@
   .site-nav,
   #footer,
   .cv-download,
+  .cv-download-note,
   .theme-toggle,
   .nav-hamburger {
     display: none !important;
@@ -191,6 +223,10 @@
   .cv-section h2 {
     color: #000 !important;
     font-size: 1.15em;
+  }
+
+  .cv-skill-group h3 {
+    color: #000 !important;
   }
 
   .cv-entry-date {

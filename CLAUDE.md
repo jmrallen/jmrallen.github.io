@@ -51,37 +51,49 @@ Before making any changes, ask about:
 - Where should this appear in the CV? (chronological order, which section?)
 - Any special formatting or notes needed?
 
-### Step 2: Update Both Versions
+### Step 2: Update cv.tex, then cv.html if it belongs there
 After I provide the information:
-1. Update cv.html (the web version) with the new content
-2. Update cv.tex (LaTeX version) with identical information
-3. Ensure formatting is consistent between both versions
-4. Keep chronological order (most recent first, typically)
+1. Add the new content to cv.tex — it is the complete record and always gets the entry
+2. Add it to cv.html **only** if it belongs in one of the six curated sections (see below)
+3. Keep wording identical between the two files wherever an item appears in both
+4. Keep reverse-chronological order within each section (most recent start date first)
 
 ### Step 3: Commit and Push
-- Commit both cv.html and cv.tex with a descriptive message like:
+- Commit cv.tex (and cv.html, if changed) with a descriptive message like:
   "Add [publication/award/teaching] to CV: [brief description]"
 - Push to GitHub to trigger automatic PDF compilation
 
 ### Step 4: Verify
-- Confirm that both files were updated
+- Confirm which files were updated
 - Note that the PDF will compile automatically via GitHub Actions
 - Remind me to check the website in a few minutes to verify the PDF updated
 
 ## CV Consistency Rules
-- Always update BOTH cv.html and cv.tex together
-- Keep the same order and content in both versions
+
+**cv.tex is the source of truth** — the complete academic CV, compiled to `assets/cv.pdf`.
+**cv.html is a deliberately curated subset** of it, not a mirror. The two are *not* expected
+to match section-for-section.
+
+cv.html carries exactly six sections, in this order:
+Profile · Education · Selected Experience · Selected Projects · Technical Skills · Languages
+
+Sections that live in cv.tex / the PDF only: Work Experience beyond the three selected
+entries, Conferences & Publications, Awards & Funding, Volunteering & Service. The page links
+to the PDF for these, with a note under the download button explaining the omission.
+
+- Every new CV item goes into cv.tex; add it to cv.html only if it fits one of the six sections
+- Where an item appears in both files, keep the wording identical
 - Use consistent date formats (e.g., "September 2024" or "Fall 2024")
-- Include all relevant links in HTML version
-- Ensure LaTeX version compiles without errors
+- Include all relevant links in the HTML version
+- cv.tex must compile under pdfLaTeX — no Unicode literals, use `\'{e}` / `\i{}` escapes
 
 ## Architecture
 
 ### Main Site (`/`)
 - `index.html` — portfolio page (Strata template)
 - `publications.html` — publications/conference abstracts page
-- `cv.html` — HTML version of CV (master reference, keep in sync with cv.tex)
-- `cv.tex` — LaTeX version of CV (compiled to PDF via GitHub Actions)
+- `cv.tex` — LaTeX version of CV; the complete record and source of truth (compiled to PDF via GitHub Actions)
+- `cv.html` — curated web CV, a subset of cv.tex (see CV Consistency Rules)
 - `contact.html` — contact form (Formspree) and social links
 - `favicon.ico` — site favicon (multi-resolution ICO; all pages reference this filename)
 - `assets/js/main.js` — jQuery-based responsive layout (breakpoints, parallax, poptrox lightbox)
