@@ -20,8 +20,10 @@ a {
   transition: color 0.2s;
 }
 
+/* !important is required here: main.css sets `a:hover { color: #002255
+   !important }`, which is unreadable (1.1:1) on the dark-mode background. */
 a:hover {
-  color: var(--accent-hover);
+  color: var(--accent-hover) !important;
 }
 
 strong, b {
@@ -79,16 +81,37 @@ input[type="button"],
 button,
 .button {
   border-color: var(--icon-border);
+}
+
+/* !important is required on `color`: main.css sets these same four selectors
+   to `color: #787878 !important`, which only reaches 3.8:1 on the dark-mode
+   background. Bare `button` is deliberately excluded — main.css does not
+   !important it, and including it here would override the nav's .theme-toggle
+   and .nav-hamburger colours. .button.primary and .button.disabled below are
+   (0,2,0) and still outrank these (0,1,0) rules, so filled and disabled
+   buttons are unaffected. */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+  color: var(--accent) !important;
+}
+
+button {
   color: var(--text-heading);
 }
 
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-button:hover,
 .button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-hover);
+  color: var(--accent-hover) !important;
+}
+
+button:hover {
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
 }
 
 .button.primary {
@@ -153,6 +176,20 @@ ul.icons li a {
 ul.icons li a:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* #footer keeps a dark background in both themes (main.css sets #1f1815), so
+   its social icons use the fixed light blue rather than var(--accent) — the
+   light theme's #002255 would be 1.1:1 there and effectively invisible.
+   main.css's `#footer .icons a { color: rgba(255,255,255,0.4) }` wins on
+   specificity over `ul.icons li a`, so it has to be matched selector-for-
+   selector; the :hover rule needs !important to beat main.css's a:hover. */
+#footer .icons a {
+  color: var(--accent-on-dark);
+}
+
+#footer .icons a:hover {
+  color: var(--accent-on-dark-hover) !important;
 }
 
 ul.labeled-icons li h3 {
