@@ -94,7 +94,7 @@ button:hover,
 .button.primary {
   background-color: var(--accent);
   border-color: var(--accent);
-  color: var(--button-text) !important;
+  color: var(--accent-contrast) !important;
 }
 
 .button.primary:hover {
@@ -545,7 +545,7 @@ body.no-sidebar #footer .inner {
 .map-container .map-console #pitch-btn {
   background-color: var(--accent);
   border: none;
-  color: #fff;
+  color: var(--accent-contrast);
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;

@@ -14,6 +14,8 @@
   --accent: #002255;
   --accent-hover: #1a3d7a;
   --accent-active: #001540;
+  /* Text/icon colour to place ON an accent-filled surface */
+  --accent-contrast: #ffffff;
   --border: #efefef;
   --input-bg: #f7f7f7;
   --button-bg: #787878;
@@ -39,9 +41,11 @@
   --text-heading: #e0e0e8;
   --text-muted: #8888a0;
   --text-light: #686880;
-  --accent: #002255;
-  --accent-hover: #1a3d7a;
-  --accent-active: #001540;
+  /* Lightened for dark mode — #002255 on #1a1a2e is unreadable (1.3:1) */
+  --accent: #8ab4f8;
+  --accent-hover: #a8c7fa;
+  --accent-active: #6a9bea;
+  --accent-contrast: #10192b;
   --border: #2a2a4a;
   --input-bg: #16213e;
   --button-bg: #2a2a4a;
@@ -68,9 +72,11 @@
     --text-heading: #e0e0e8;
     --text-muted: #8888a0;
     --text-light: #686880;
-    --accent: #002255;
-    --accent-hover: #1a3d7a;
-    --accent-active: #001540;
+    /* Lightened for dark mode — #002255 on #1a1a2e is unreadable (1.3:1) */
+    --accent: #8ab4f8;
+    --accent-hover: #a8c7fa;
+    --accent-active: #6a9bea;
+    --accent-contrast: #10192b;
     --border: #2a2a4a;
     --input-bg: #16213e;
     --button-bg: #2a2a4a;
