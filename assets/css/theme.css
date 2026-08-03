@@ -17,10 +17,9 @@
   /* Text/icon colour to place ON an accent-filled surface */
   --accent-contrast: #ffffff;
   /* Accent for permanently-dark surfaces (#header / #footer keep their dark
-     background in both themes, so these stay identical in light and dark —
-     do NOT redefine them in the dark-mode blocks below) */
+     background in both themes, so this stays identical in light and dark —
+     do NOT redefine it in the dark-mode blocks below) */
   --accent-on-dark: #8ab4f8;
-  --accent-on-dark-hover: #a8c7fa;
   --border: #efefef;
   --input-bg: #f7f7f7;
   --button-bg: #787878;

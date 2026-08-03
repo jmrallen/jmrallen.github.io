@@ -179,17 +179,19 @@ ul.icons li a:hover {
 }
 
 /* #footer keeps a dark background in both themes (main.css sets #1f1815), so
-   its social icons use the fixed light blue rather than var(--accent) — the
-   light theme's #002255 would be 1.1:1 there and effectively invisible.
+   these icons are styled for a dark surface in light mode too. At rest they
+   match the sidebar subtitle (#header p, nav.css) at rgba(255,255,255,0.5);
+   on hover they take the fixed light blue rather than var(--accent-hover),
+   whose light-theme value (#1a3d7a) would be ~1.4:1 against that background.
    main.css's `#footer .icons a { color: rgba(255,255,255,0.4) }` wins on
    specificity over `ul.icons li a`, so it has to be matched selector-for-
    selector; the :hover rule needs !important to beat main.css's a:hover. */
 #footer .icons a {
-  color: var(--accent-on-dark);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 #footer .icons a:hover {
-  color: var(--accent-on-dark-hover) !important;
+  color: var(--accent-on-dark) !important;
 }
 
 ul.labeled-icons li h3 {
