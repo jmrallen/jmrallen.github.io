@@ -107,7 +107,6 @@ to the PDF for these, with a note under the download button explaining the omiss
 ### Cartography (`/cartography/`)
 - `cartography/index.html` — portfolio grid of cartography projects
 - `cartography/ghana-crema/index.html` — Ghana CREMA map project page
-- `cartography/panjshir-offensives/index.html` — Panjshir Offensives project page
 - `cartography/afghanistan-tajikistan/index.html` — Afghanistan-Tajikistan interactive JS map
 - `cartography/central-asia-s2/index.html` — Central Asia Sentinel-2 mosaic project page (includes Prism.js for code highlighting)
 
@@ -126,9 +125,9 @@ A configuration-driven scrollytelling template using Mapbox GL JS and Scrollama.
 - `assets/Meteorite_Landings.csv` — meteorite impact dataset
 
 ### Navigation
-All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 10 pages:
+All pages share the same nav bar: Home | Publications | Cartography | CV | Contact. When adding/removing nav items, update ALL 8 pages:
 - Root: `index.html`, `publications.html`, `cv.html`, `contact.html`
-- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/panjshir-offensives/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`, `cartography/wakhan/index.html`
+- Cartography: `cartography/index.html`, `cartography/ghana-crema/index.html`, `cartography/afghanistan-tajikistan/index.html`, `cartography/central-asia-s2/index.html`
 - Adjust relative paths for subdirectory pages (`../` for cartography/, `../../` for cartography/*/`)
 
 ### SEO Requirements

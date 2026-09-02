@@ -31,22 +31,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jmrallen.github.io/cartography/panjshir-offensives/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://jmrallen.github.io/cartography/afghanistan-tajikistan/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://jmrallen.github.io/cartography/central-asia-s2/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jmrallen.github.io/cartography/wakhan/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
